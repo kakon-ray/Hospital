@@ -1,0 +1,27 @@
+.enperence-section .title-width {
+  background-color: #ffffff;
+  width: 25%;
+}
+.enperence-section .ex-bg-1 {
+  background-color: #147b8d;
+}
+.enperence-section .ex-bg-2 {
+  background-color: #00a5c2;
+}
+.enperence-section .ex-bg-3 {
+  background-color: #1390a7;
+}
+.enperence-section .ex-bg-4 {
+  background-color: #1ab0ca;
+}
+.enperence-section .count {
+  font-size: 4em;
+  font-style: normal;
+  font-weight: 300;
+}
+.enperence-section .fas {
+  font-size: 3em;
+}
+.enperence-section .title {
+  font-weight: 700;
+}

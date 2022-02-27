@@ -36,10 +36,11 @@ export default function Nabar() {
             navbarScroll
           >
             <NavLink page="Home" link="#" />
-            <NavLink page="About" link="#" />
+            <NavLink page="Appointment" link="#" />
+            <NavLink page="About Our Clinic" link="#" />
 
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <DropDownItem item="Actioin" link="#" />
+            <NavDropdown title="Other" id="navbarScrollingDropdown">
+              <DropDownItem item="Actiion" className={nav.menue} link="#" />
               <DropDownItem item="Something else here" link="#" />
               <NavDropdown.Divider />
               <DropDownItem item="Actioin" link="#" />
