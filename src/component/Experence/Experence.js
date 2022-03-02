@@ -35,13 +35,6 @@ export default function Experence() {
             end="10000"
             bgColor="ex-bg-4"
           />
-          <ExperenceArtical
-            icon="fas fa-stethoscope"
-            title="Variety of Drugs"
-            start="0"
-            end="3000"
-            bgColor="ex-bg-5"
-          />
         </div>
       </div>
     </section>

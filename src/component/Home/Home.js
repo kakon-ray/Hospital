@@ -1,4 +1,6 @@
 import React from "react";
+import Appintment from "../Appintment/Appintment";
+import Doctor from "../Doctor/Doctor";
 import Experence from "../Experence/Experence";
 import Nabar from "../Navbar/Nabar";
 import Provide from "../Provide/Provide";
@@ -11,6 +13,8 @@ export default function Home() {
       <Slider />
       <Provide />
       <Experence />
+      <Doctor />
+      <Appintment title="Do you need an appointment?" />
     </>
   );
 }
