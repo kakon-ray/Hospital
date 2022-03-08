@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable import/no-anonymous-default-export */
 import React from "react";
 
@@ -13,7 +14,7 @@ export default function ({ title, department, para, img, alt }) {
             </a>
             <a href="#">
               {" "}
-              <i className="fab fa-google-plus-square"></i>
+              <i className="fab fa-google-plus-square m-2"></i>
             </a>
             <a href="#">
               <i className="fab fa-twitter-square"></i>

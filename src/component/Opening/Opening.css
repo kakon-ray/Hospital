@@ -1,0 +1,13 @@
+.opening-section {
+  /* background-image: url("../img/opening.jpg"); */
+  width: 100%;
+  height: 420px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  /* background-size: 100% 100%; */
+}
+
+.opening-section .card {
+  background-color: #fbfdffd0;
+}
