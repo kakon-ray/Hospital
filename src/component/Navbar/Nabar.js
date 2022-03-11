@@ -38,18 +38,19 @@ export default function Nabar() {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/appointment">Appointment</Nav.Link>
 
-            <Nav.Link href="/">About Our Clinic</Nav.Link>
+            <Nav.Link href="/clinic">About Our Clinic</Nav.Link>
 
             <NavDropdown title="Other" id="navbarScrollingDropdown">
               <Nav.Link href="/">Actiion</Nav.Link>
-              <Nav.Link href="/">Something else here</Nav.Link>
-              <Nav.Link href="/">Actiion</Nav.Link>
-              <Nav.Link href="/">Actiion</Nav.Link>
+              <Nav.Link href="/clinic">About Our Clinic</Nav.Link>
+              <Nav.Link href="/appointment">Appointment</Nav.Link>
+              <Nav.Link href="/clinic">Contact</Nav.Link>
             </NavDropdown>
 
             <Nav.Link href="/" disabled>
               Actiion
             </Nav.Link>
+            <Nav.Link href="/clinic">Contact</Nav.Link>
           </Nav>
           <Form className="d-flex">
             {show ? (
