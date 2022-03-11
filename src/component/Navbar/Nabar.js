@@ -7,7 +7,6 @@ import {
   Form,
   FormControl,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 import nav from "./Navbar.css";
 
@@ -25,9 +24,9 @@ export default function Nabar() {
   return (
     <Navbar bg="light" expand="lg" className={`${nav.nav} py-0`}>
       <Container fluid>
-        <Navbar.Brand href="#" className="font-weight-bold">
+        <h1 href="/" className="logo-style">
           Khulna Hospital
-        </Navbar.Brand>
+        </h1>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -44,13 +43,13 @@ export default function Nabar() {
               <Nav.Link href="/">Actiion</Nav.Link>
               <Nav.Link href="/clinic">About Our Clinic</Nav.Link>
               <Nav.Link href="/appointment">Appointment</Nav.Link>
-              <Nav.Link href="/clinic">Contact</Nav.Link>
+              <Nav.Link href="/contact">Contact</Nav.Link>
             </NavDropdown>
 
             <Nav.Link href="/" disabled>
               Actiion
             </Nav.Link>
-            <Nav.Link href="/clinic">Contact</Nav.Link>
+            <Nav.Link href="/contact">Contact</Nav.Link>
           </Nav>
           <Form className="d-flex">
             {show ? (
