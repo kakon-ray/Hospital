@@ -6,7 +6,7 @@
   top: 62px;
 }
 
-.form-control {
+.form-control-navbar {
   position: absolute;
   top: 0;
   left: 0;
@@ -20,7 +20,7 @@
   font-size: 25px;
   font-weight: 700;
 }
-.form-control:focus {
+.form-control-navbar:focus {
   background-color: #f8f9fa;
 }
 

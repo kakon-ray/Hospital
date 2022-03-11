@@ -7,9 +7,9 @@ import {
   Form,
   FormControl,
 } from "react-bootstrap";
-import DropDownItem from "./DropDownItem";
+import { Link } from "react-router-dom";
+
 import nav from "./Navbar.css";
-import NavLink from "./NavLink";
 
 export default function Nabar() {
   const [show, setShow] = useState(false);
@@ -35,19 +35,21 @@ export default function Nabar() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <NavLink page="Home" link="#" />
-            <NavLink page="Appointment" link="#" />
-            <NavLink page="About Our Clinic" link="#" />
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/appointment">Appointment</Nav.Link>
+
+            <Nav.Link href="/">About Our Clinic</Nav.Link>
 
             <NavDropdown title="Other" id="navbarScrollingDropdown">
-              <DropDownItem item="Actiion" className={nav.menue} link="#" />
-              <DropDownItem item="Something else here" link="#" />
-              <NavDropdown.Divider />
-              <DropDownItem item="Actioin" link="#" />
-              <DropDownItem item="Actioin" link="#" disabled />
+              <Nav.Link href="/">Actiion</Nav.Link>
+              <Nav.Link href="/">Something else here</Nav.Link>
+              <Nav.Link href="/">Actiion</Nav.Link>
+              <Nav.Link href="/">Actiion</Nav.Link>
             </NavDropdown>
 
-            <NavLink page="About" link="#" disabled />
+            <Nav.Link href="/" disabled>
+              Actiion
+            </Nav.Link>
           </Nav>
           <Form className="d-flex">
             {show ? (
@@ -55,7 +57,7 @@ export default function Nabar() {
                 type="search"
                 id="formInput"
                 placeholder="Search"
-                className="me-2 form-control"
+                className="me-2 form-control-navbar"
                 aria-label="Search"
               />
             ) : null}

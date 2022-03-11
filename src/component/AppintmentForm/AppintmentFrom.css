@@ -1,0 +1,11 @@
+.appointment-page-contact {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+
+  /* background-size: 100% 100%; */
+}
+
+.appointment-page-contact .card {
+  background-color: #1c1c1da2;
+}
