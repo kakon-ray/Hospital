@@ -22,7 +22,7 @@ export default function Nabar() {
   }
 
   return (
-    <Navbar bg="light" expand="lg" className={`${nav.nav} py-0`}>
+    <Navbar bg="light" expand="lg" className={`${nav.nav} navbar py-0`}>
       <Container fluid>
         <h1 href="/" className="logo-style">
           Khulna Hospital
