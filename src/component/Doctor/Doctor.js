@@ -4,7 +4,6 @@ import DoctorArtical from "./DoctorArtical";
 
 export default function Doctor() {
   const [users, setUsers] = useContext(doctorContext);
-  console.log(users[0].img);
 
   return (
     <section className="doctor-section py-5">

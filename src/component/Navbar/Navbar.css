@@ -38,3 +38,26 @@
   font-weight: 700;
   font-size: 30px;
 }
+
+/* mobile style */
+.navbar-collapse {
+  background-color: #f8f9fa;
+  z-index: 1;
+  width: 100%;
+}
+.navbar-nav-scroll {
+  overflow: hidden;
+}
+.navbar-nav {
+  max-height: none;
+}
+
+@media (max-width: 978px) {
+  .nav-form {
+    padding-bottom: 5px;
+  }
+}
+
+.logo {
+  width: 300px;
+}

@@ -24,16 +24,14 @@ export default function Nabar() {
   return (
     <Navbar bg="light" expand="lg" className={`${nav.nav} navbar py-0`}>
       <Container fluid>
-        <h1 href="/" className="logo-style">
-          Khulna Hospital
-        </h1>
+        <div className="logo">
+          <h1 href="/" className="logo-style">
+            Khulna Hospital
+          </h1>
+        </div>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="ms-auto m-5 my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
-            navbarScroll
-          >
+          <Nav className="ms-auto m-5 my-2 my-lg-0" navbarScroll>
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/appointment">Appointment</Nav.Link>
 
@@ -51,7 +49,7 @@ export default function Nabar() {
             </Nav.Link>
             <Nav.Link href="/contact">Contact</Nav.Link>
           </Nav>
-          <Form className="d-flex">
+          <Form className="d-flex nav-form justify-content-center">
             {show ? (
               <FormControl
                 type="search"
