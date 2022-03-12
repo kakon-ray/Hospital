@@ -7,19 +7,22 @@ import Appointment from "./component/Page/Appointment";
 import AboutOurClinic from "./component/Page/AboutOurClinic";
 import ContactMe from "./component/Page/ContactMe";
 import { UserProvider } from "./component/userContext/userContext";
+import { DoctorProvider } from "./component/userContext/doctorContext";
 
 function App() {
   return (
     <div className="App">
       <UserProvider>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/appointment" component={Appointment} />
-            <Route exact path="/clinic" component={AboutOurClinic} />
-            <Route exact path="/contact" component={ContactMe} />
-          </Switch>
-        </Router>
+        <DoctorProvider>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/appointment" component={Appointment} />
+              <Route exact path="/clinic" component={AboutOurClinic} />
+              <Route exact path="/contact" component={ContactMe} />
+            </Switch>
+          </Router>
+        </DoctorProvider>
       </UserProvider>
     </div>
   );
