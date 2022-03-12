@@ -9,3 +9,8 @@
 .appointment-page-contact .card {
   background-color: #1c1c1da2;
 }
+
+.appointmentText {
+  color: #0dcaf0;
+  text-align: center;
+}

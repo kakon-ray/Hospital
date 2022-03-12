@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel, Button } from "react-bootstrap";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function CarouselCaption({ title, para, btnText }) {
   return (
@@ -8,8 +9,12 @@ export default function CarouselCaption({ title, para, btnText }) {
         <div className="slider-content">
           <h3>{title}</h3>
           <p>{para}</p>
-          <Button variant="outline-info">Reade More</Button>
-          <Button variant="info m-3">Reade More</Button>
+          <Link to="/appointment/">
+            <Button variant="outline-info">Appointment</Button>
+          </Link>
+          <Link to="/contact/">
+            <Button variant="info m-3">Contact Now</Button>
+          </Link>
         </div>
       </Carousel.Caption>
     </>

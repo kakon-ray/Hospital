@@ -19,6 +19,11 @@ export const NewsProvider = (props) => {
       img: "https://neurokolkata.org/wp-content/uploads/2019/11/slider_3-1024x683.jpg",
       para: "Oxygenna , Jun 12 20211",
     },
+    {
+      title: "Working in the OR as a nurch",
+      img: "https://static.dw.com/image/50927628_101.jpg",
+      para: "Oxygenna , July 30 20211",
+    },
   ]);
 
   return (

@@ -9,10 +9,9 @@ export default function Home() {
   return (
     <>
       <Nabar />
-
       <Slider />
-      <Provide />
       <AppintmentForm />
+      <Provide />
       <Footer />
     </>
   );

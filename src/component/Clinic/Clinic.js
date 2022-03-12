@@ -1,6 +1,7 @@
 /* eslint-disable react/style-prop-object */
 import React from "react";
 import "./Clinic.css";
+import Accordion from "react-bootstrap/Accordion";
 
 export default function Clinic() {
   return (
@@ -15,108 +16,45 @@ export default function Clinic() {
               Medical Clinic urgent care clinic as your primary location for
               healthcare needs:
             </p>
-            <div className="accordion" id="accordionExample">
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingOne">
-                  <button
-                    className="accordion-button"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne"
-                    aria-expanded="true"
-                    aria-controls="collapseOne"
-                  >
-                    Patient-Centered
-                  </button>
-                </h2>
-                <div
-                  id="collapseOne"
-                  className="accordion-collapse collapse show"
-                  aria-labelledby="headingOne"
-                  data-bs-parent="#accordionExample"
-                >
-                  <div className="accordion-body">
-                    Decisions and operations sustain and enhance patients’
-                    dignity and welfare.
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingTwo">
-                  <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="collapseTwo"
-                  >
-                    Caring
-                  </button>
-                </h2>
-                <div
-                  id="collapseTwo"
-                  className="accordion-collapse collapse"
-                  aria-labelledby="headingTwo"
-                  data-bs-parent="#accordionExample"
-                >
-                  <div className="accordion-body">
-                    Relationships between staff and patients promote continuity
-                    of care and support patient self-care and wellness.
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingThree">
-                  <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                  >
-                    Mutually respectful
-                  </button>
-                </h2>
-                <div
-                  id="collapseThree"
-                  className="accordion-collapse collapse"
-                  aria-labelledby="headingThree"
-                  data-bs-parent="#accordionExample"
-                >
-                  <div className="accordion-body">
-                    We recognize and appreciate each individual’s contributions
-                    to achieving the Clinic’s mission and to creating a
-                    rewarding and pleasant workplace.
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <h2 className="accordion-header" id="headingThree">
-                  <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                  >
-                    Community-oriented
-                  </button>
-                </h2>
-                <div
-                  id="collapseThree"
-                  className="accordion-collapse collapse"
-                  aria-labelledby="headingThree"
-                  data-bs-parent="#accordionExample"
-                >
-                  <div className="accordion-body">
-                    Clinic outreach efforts expand and support healthcare.
-                  </div>
-                </div>
-              </div>
-            </div>
+
+            <Accordion defaultActiveKey="0">
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>Patient-Centered</Accordion.Header>
+                <Accordion.Body>
+                  Decisions and operations sustain and enhance patients’ dignity
+                  and welfare.
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="1">
+                <Accordion.Header>Caring</Accordion.Header>
+                <Accordion.Body>
+                  Relationships between staff and patients promote continuity of
+                  care and support patient self-care and wellness.
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="2">
+                <Accordion.Header>Community-oriented</Accordion.Header>
+                <Accordion.Body>
+                  Clinic outreach efforts expand and support healthcare.Clinic
+                  outreach efforts expand and support healthcare.
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="3">
+                <Accordion.Header> Mutually respectful</Accordion.Header>
+                <Accordion.Body>
+                  We recognize and appreciate each individual’s contributions to
+                  achieving the Clinic’s mission and to creating a rewarding and
+                  pleasant workplace.
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="4">
+                <Accordion.Header> Community-oriented</Accordion.Header>
+                <Accordion.Body>
+                  Clinic outreach efforts expand and support healthcare.Clinic
+                  outreach efforts expand and support healthcare.
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
           </div>
           <div className="col-lg-6">
             <h1 className="mt-5 title">Our Skills</h1>
