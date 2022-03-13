@@ -37,6 +37,7 @@
   color: #0dcaf0;
   font-weight: 700;
   font-size: 30px;
+  text-decoration: none;
 }
 
 /* mobile style */
@@ -60,4 +61,5 @@
 
 .logo {
   width: 300px;
+  text-decoration: none;
 }

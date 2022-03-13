@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Contact.css";
 
 // Bootstrap Modal
@@ -13,7 +13,7 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  // user do not submit
+  //if user wrong input do not submit useState
   const [notSubmit, setNotSubmit] = useState("");
 
   // submit all input value
@@ -56,7 +56,7 @@ export default function Contact() {
     setMessage("");
   };
 
-  // user do not submit
+  //if user wrong input do not submit
   const doNotSubmit = (e) => {
     e.preventDefault();
     setallData({

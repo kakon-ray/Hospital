@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Appintment({ title }) {
   return (
@@ -9,13 +10,15 @@ export default function Appintment({ title }) {
             <h1 className="text-center">{title}</h1>
           </div>
           <div className="col-lg-4 text-center my-3">
-            <button
-              type="button"
-              className="btn btn-light btn-lg btn-block text-info"
-            >
-              {" "}
-              Appinment Now <i className="fas fa-arrow-right"></i>
-            </button>
+            <Link to="appointment">
+              <button
+                type="button"
+                className="btn btn-light btn-lg btn-block text-info"
+              >
+                {" "}
+                Appinment Now <i className="fas fa-arrow-right"></i>
+              </button>
+            </Link>
           </div>
         </div>
       </div>

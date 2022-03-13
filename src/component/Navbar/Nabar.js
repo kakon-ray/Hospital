@@ -7,6 +7,7 @@ import {
   Form,
   FormControl,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import nav from "./Navbar.css";
 
@@ -25,9 +26,9 @@ export default function Nabar() {
     <Navbar bg="light" expand="lg" className={`${nav.nav} navbar py-0`}>
       <Container fluid>
         <div className="logo">
-          <h1 href="/" className="logo-style">
+          <Nav.Link href="/" className="logo-style">
             Khulna Hospital
-          </h1>
+          </Nav.Link>
         </div>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import background from "../../assets/img/opening.jpg";
 import "./AppintmentFrom.css";
 import { Form } from "react-bootstrap";
+// Email Validation Checck
+import validator from "validator";
 
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
@@ -17,7 +19,8 @@ export default function AppintmentForm() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  // end useing modal work
+  //if user wrong input do not submit useState
+  const [notSubmit, setNotSubmit] = useState("");
 
   const updateName = (e) => {
     setName(e.target.value);
@@ -31,11 +34,8 @@ export default function AppintmentForm() {
   const updateBirthDay = (e) => {
     setBirthDay(e.target.value);
   };
-  // console.log(name);
-  // console.log(email);
-  // console.log(birthDay);
 
-  const allData = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setALldata({
       name: name,
@@ -43,6 +43,27 @@ export default function AppintmentForm() {
       catagory: catagory,
       birthDay: birthDay,
     });
+    setNotSubmit("");
+  };
+
+  //if user wrong input do not submit
+  const doNotSubmit = (e) => {
+    e.preventDefault();
+    setALldata({
+      name: name,
+      email: email,
+      catagory: catagory,
+      birthDay: birthDay,
+    });
+
+    setNotSubmit("Please Enter Valid Email Address Then you Submit");
+  };
+
+  const resetInput = () => {
+    setName("");
+    setEmail("");
+    setCatagory("");
+    setBirthDay("");
   };
 
   return (
@@ -91,11 +112,24 @@ export default function AppintmentForm() {
               </div>
               <h1 className="text-center">Book an appointment now</h1>
               <div className="title-width m-auto my-4 bg-info"></div>
+
               <div className="row mx-2">
-                <form onSubmit={allData}>
+                <div className="mb-4 text-center error-text">{notSubmit}</div>
+                <form
+                  onSubmit={
+                    validator.isEmail(email)
+                      ? handleSubmit
+                      : (e) => {
+                          doNotSubmit(e);
+                        }
+                  }
+                >
                   <div className="row g-2">
                     <div className="col-lg-6">
-                      <label>Your Name</label>
+                      <label className="error-text">
+                        {" "}
+                        {!name ? "Enter Your Name" : "Ok"}
+                      </label>
 
                       <Form.Control
                         type="text"
@@ -103,7 +137,11 @@ export default function AppintmentForm() {
                         onChange={updateName}
                         placeholder="Your Name"
                       />
-                      <label className="mt-3">Your Email</label>
+                      <label className="mt-3 error-text">
+                        {!validator.isEmail(email)
+                          ? "Please Enter Valid Email"
+                          : "Ok"}
+                      </label>
 
                       <Form.Control
                         type="text"
@@ -113,17 +151,22 @@ export default function AppintmentForm() {
                       />
                     </div>
                     <div className="col-lg-6">
-                      <label>Select Your Categorie</label>
+                      <label className="error-text">
+                        {!catagory ? "Enter Catagory" : "Ok"}
+                      </label>
 
                       <Form.Select
                         aria-label="Default select example"
                         onChange={updateCatagory}
                       >
+                        <option value="1">Select Catagory</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                       </Form.Select>
-                      <label className="mt-3">Select Your Date of Birth</label>
+                      <label className="mt-3 error-text">
+                        {!birthDay ? "Enter Your Dath of Birthday" : "Ok"}
+                      </label>
 
                       <Form.Control
                         type="date"
@@ -132,13 +175,31 @@ export default function AppintmentForm() {
                         onChange={updateBirthDay}
                       />
                     </div>
-                    <button
-                      type="submit"
-                      onClick={handleShow}
-                      className="btn btn-light my-5 px-5"
-                    >
-                      Submit
-                    </button>
+
+                    <div className="row">
+                      <div className="col"></div>
+                      <div className="col  d-flex justify-content-end m-0 p-0">
+                        <button
+                          type="submit"
+                          onClick={
+                            validator.isEmail(email) ? handleShow : doNotSubmit
+                          }
+                          className="btn btn-light mt-5 px-4"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                      <div className="col d-flex justify-content-start ms-2 p-0">
+                        <button
+                          type="reset"
+                          className="btn btn-light mt-5 px-3"
+                          onClick={resetInput}
+                        >
+                          Rest Form
+                        </button>
+                      </div>
+                      <div className="col"></div>
+                    </div>
                   </div>
                 </form>
               </div>
