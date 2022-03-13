@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Carousel } from "react-bootstrap";
 import "./Slider.css";
 
@@ -7,32 +7,19 @@ import img1 from "./img/Screenshot_6.png";
 import img2 from "./img/successful-medical-team_329181-9252.jpg";
 import CarouselCaption from "./CarouselCaption";
 import CarouselImg from "./CarouselImg";
+import { sliderContext } from "../userContext/sliderContext";
 
 export default function Slider() {
+  const [users, setUsers] = useContext(sliderContext);
   return (
     <>
       <Carousel>
-        <Carousel.Item>
-          <CarouselImg img={img} alt="First Slide" />
-          <CarouselCaption
-            title="Hello My Name is Susanto Ray I am MD"
-            para="Hello My Name is Susanto Ray I am MD Hello My Name is Susanto Ray I am MD"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <CarouselImg img={img1} alt="First Slide" />
-          <CarouselCaption
-            title="Hello My Name is Susanto Ray I am MD"
-            para="Hello My Name is Susanto Ray I am MD Hello My Name is Susanto Ray I am MD"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <CarouselImg img={img2} alt="First Slide" />
-          <CarouselCaption
-            title="Hello My Name is Susanto Ray I am MD"
-            para="Hello My Name is Susanto Ray I am MD Hello My Name is Susanto Ray I am MD"
-          />
-        </Carousel.Item>
+        {users.map((user) => (
+          <Carousel.Item>
+            <CarouselImg img={user.img} alt="First Slide" />
+            <CarouselCaption title={user.title} para={user.description} />
+          </Carousel.Item>
+        ))}
       </Carousel>
     </>
   );

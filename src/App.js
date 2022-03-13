@@ -9,6 +9,7 @@ import ContactMe from "./component/Page/ContactMe";
 import { UserProvider } from "./component/userContext/userContext";
 import { DoctorProvider } from "./component/userContext/doctorContext";
 import { NewsProvider } from "./component/userContext/latestNewsContext";
+import { SliderProvider } from "./component/userContext/sliderContext";
 
 function App() {
   return (
@@ -16,14 +17,16 @@ function App() {
       <UserProvider>
         <DoctorProvider>
           <NewsProvider>
-            <Router>
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/appointment" component={Appointment} />
-                <Route exact path="/clinic" component={AboutOurClinic} />
-                <Route exact path="/contact" component={ContactMe} />
-              </Switch>
-            </Router>
+            <SliderProvider>
+              <Router>
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route exact path="/appointment" component={Appointment} />
+                  <Route exact path="/clinic" component={AboutOurClinic} />
+                  <Route exact path="/contact" component={ContactMe} />
+                </Switch>
+              </Router>
+            </SliderProvider>
           </NewsProvider>
         </DoctorProvider>
       </UserProvider>
