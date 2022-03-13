@@ -13,9 +13,11 @@ export default function AppintmentForm() {
   const [birthDay, setBirthDay] = useState("");
   const [alldata, setALldata] = useState("");
 
+  // start modal useing modal function
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  // end useing modal work
 
   const updateName = (e) => {
     setName(e.target.value);
