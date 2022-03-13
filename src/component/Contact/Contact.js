@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import "./Contact.css";
 
 // Bootstrap Modal
 import Modal from "react-bootstrap/Modal";
@@ -12,7 +13,10 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  // user do not submit
+  const [notSubmit, setNotSubmit] = useState("");
 
+  // submit all input value
   const [allData, setallData] = useState("");
 
   // start modal useing modal function
@@ -25,18 +29,35 @@ export default function Contact() {
     setName(e.target.value);
   };
   const updateEmail = (e) => {
-    var email = e.target.value;
-    if (validator.isEmail(email)) {
-      setEmail(e.target.value);
-    } else {
-      setEmail("Please Enter Valide Email");
-    }
+    setEmail(e.target.value);
   };
   const updateMessage = (e) => {
     setMessage(e.target.value);
   };
 
-  const addAllData = (e) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setallData({
+      name,
+      email,
+      message,
+    });
+    setNotSubmit("");
+
+    // console.log(name);
+    // console.log(email);
+    // console.log(message);
+  };
+
+  const resetInput = () => {
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
+
+  // user do not submit
+  const doNotSubmit = (e) => {
     e.preventDefault();
     setallData({
       name,
@@ -44,9 +65,7 @@ export default function Contact() {
       message,
     });
 
-    // console.log(name);
-    // console.log(email);
-    // console.log(message);
+    setNotSubmit("Please Enter Valid Email Address Then you Submit");
   };
 
   return (
@@ -85,7 +104,16 @@ export default function Contact() {
 
             <div className="card mt-5 py-5 pb-5 px-2">
               <div className="row mx-2">
-                <form onSubmit={addAllData}>
+                <div className="text-danger mb-3 error-text">{notSubmit}</div>
+                <form
+                  onSubmit={
+                    validator.isEmail(email)
+                      ? handleSubmit
+                      : (e) => {
+                          doNotSubmit(e);
+                        }
+                  }
+                >
                   <div className="row g-2">
                     <div className="col-lg-6">
                       <div className="input-group">
@@ -96,11 +124,13 @@ export default function Contact() {
                           type="text"
                           className="form-control shadow-none"
                           placeholder="Username"
-                          aria-label="Your Name"
-                          aria-describedby="basic-addon1"
+                          value={name}
                           onChange={updateName}
                         />
                       </div>
+                      <span className="text-danger error-text">
+                        {!name ? "Please Enter Your Name" : null}
+                      </span>
                     </div>
                     <div className="col-lg-6">
                       <div className="input-group">
@@ -114,11 +144,15 @@ export default function Contact() {
                           type="text"
                           className="form-control shadow-none"
                           placeholder="Your Email"
-                          aria-label="Username"
-                          aria-describedby="basic-addon1"
+                          value={email}
                           onChange={updateEmail}
                         />
                       </div>
+                      <span className="text-danger error-text">
+                        {!validator.isEmail(email)
+                          ? "Please Enter Valid Email"
+                          : null}
+                      </span>
                     </div>
                     <div className="mt-3">
                       <textarea
@@ -126,16 +160,33 @@ export default function Contact() {
                         id="exampleFormControlTextarea1"
                         rows="3"
                         placeholder="Your Message"
+                        value={message}
                         onChange={updateMessage}
                       ></textarea>
                     </div>
-                    <button
-                      type="submit"
-                      className="btn btn-info text-light my-4 px-5"
-                      onClick={handleShow}
-                    >
-                      Submit
-                    </button>
+
+                    <div className="row">
+                      <div className="col  d-flex justify-content-center">
+                        <button
+                          type="submit"
+                          className="btn btn-info text-light my-4 px-5"
+                          onClick={
+                            validator.isEmail(email) ? handleShow : doNotSubmit
+                          }
+                        >
+                          Submit
+                        </button>
+                      </div>
+                      <div className="col d-flex justify-content-center">
+                        <button
+                          type="reset"
+                          className="btn btn-info text-light my-4 px-5"
+                          onClick={resetInput}
+                        >
+                          Rest Form
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </form>
               </div>
