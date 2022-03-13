@@ -26,29 +26,47 @@ export default function Nabar() {
     <Navbar bg="light" expand="lg" className={`${nav.nav} navbar py-0`}>
       <Container fluid>
         <div className="logo">
-          <Nav.Link href="/" className="logo-style">
-            Khulna Hospital
-          </Nav.Link>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Nav.Link href="/" className="logo-style">
+              Khulna Hospital
+            </Nav.Link>
+          </Link>
         </div>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="ms-auto m-5 my-2 my-lg-0" navbarScroll>
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/appointment">Appointment</Nav.Link>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <Nav.Link href="/">Home</Nav.Link>
+            </Link>
 
-            <Nav.Link href="/clinic">About Our Clinic</Nav.Link>
+            <Link to="/appointment" style={{ textDecoration: "none" }}>
+              <Nav.Link href="/appointment">Appointment</Nav.Link>
+            </Link>
+            <Link to="/clinic" style={{ textDecoration: "none" }}>
+              <Nav.Link href="/clinic">About Our Clinic</Nav.Link>
+            </Link>
 
             <NavDropdown title="Other" id="navbarScrollingDropdown">
-              <Nav.Link href="/">Actiion</Nav.Link>
-              <Nav.Link href="/clinic">About Our Clinic</Nav.Link>
-              <Nav.Link href="/appointment">Appointment</Nav.Link>
-              <Nav.Link href="/contact">Contact</Nav.Link>
+              <Link to="/clinic" style={{ textDecoration: "none" }}>
+                <Nav.Link href="/">Actiion</Nav.Link>
+              </Link>
+              <Link to="/clinic" style={{ textDecoration: "none" }}>
+                <Nav.Link href="/clinic">About Our Clinic</Nav.Link>
+              </Link>
+              <Link to="/appointment" style={{ textDecoration: "none" }}>
+                <Nav.Link href="/appointment">Appointment</Nav.Link>
+              </Link>
+              <Link to="/contact" style={{ textDecoration: "none" }}>
+                <Nav.Link href="/contact">Contact</Nav.Link>
+              </Link>
             </NavDropdown>
 
             <Nav.Link href="/" disabled>
               Actiion
             </Nav.Link>
-            <Nav.Link href="/contact">Contact</Nav.Link>
+            <Link to="/contact" style={{ textDecoration: "none" }}>
+              <Nav.Link href="/contact">Contact</Nav.Link>
+            </Link>
           </Nav>
           <Form className="d-flex nav-form justify-content-center">
             {show ? (
