@@ -7,7 +7,7 @@ import {
   Form,
   FormControl,
 } from "react-bootstrap";
-import { hide } from "react-modal/lib/helpers/ariaAppHider";
+// import { hide } from "react-modal/lib/helpers/ariaAppHider";
 import { Link } from "react-router-dom";
 
 import nav from "./Navbar.css";
