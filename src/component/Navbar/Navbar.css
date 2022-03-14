@@ -63,3 +63,7 @@
   width: 300px;
   text-decoration: none;
 }
+
+#formInput {
+  z-index: 1;
+}

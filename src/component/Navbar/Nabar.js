@@ -7,6 +7,7 @@ import {
   Form,
   FormControl,
 } from "react-bootstrap";
+import { hide } from "react-modal/lib/helpers/ariaAppHider";
 import { Link } from "react-router-dom";
 
 import nav from "./Navbar.css";
@@ -14,7 +15,8 @@ import nav from "./Navbar.css";
 export default function Nabar() {
   const [show, setShow] = useState(false);
 
-  function handleshow() {
+  function handleshow(e) {
+    e.preventDefault();
     if (show === false) {
       setShow(true);
     } else {
@@ -73,12 +75,21 @@ export default function Nabar() {
               <FormControl
                 type="search"
                 id="formInput"
-                placeholder="Search"
+                placeholder="Enter Search Value"
                 className="me-2 form-control-navbar"
                 aria-label="Search"
               />
             ) : null}
-            <i className="fas fa-search me-4" onClick={handleshow}></i>
+            {show ? (
+              <button id="formInput" className="btn btn-outline-info me-2 mt-1">
+                Search
+              </button>
+            ) : null}
+
+            <i
+              className={`fas fa-search me-4 ${show ? "pt-3" : ""} pt-2 pe-2`}
+              onClick={(e) => handleshow(e)}
+            ></i>
           </Form>
         </Navbar.Collapse>
       </Container>
