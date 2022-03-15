@@ -15,6 +15,9 @@ import nav from "./Navbar.css";
 // redirect search result page
 import { useHistory } from "react-router-dom";
 
+// current pathname
+import { useLocation } from "react-router-dom";
+
 export default function Nabar(props) {
   const [show, setShow] = useState(false);
   // navbar search input value
@@ -37,11 +40,14 @@ export default function Nabar(props) {
 
   // useing search result show search result page
   const history = useHistory();
+  const location = useLocation();
   const handleSearch = (e) => {
     e.preventDefault();
 
     history.push(`/searchresult`);
-    props.func(search);
+    if (location.pathname === "/searchresult") {
+      props.func(search);
+    }
   };
 
   return (

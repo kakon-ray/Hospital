@@ -1,13 +1,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
-import Appintment from "../Appintment/Appintment";
-import Doctor from "../Doctor/Doctor";
-import Experence from "../Experence/Experence";
 
 import Footer from "../Footer/Footer";
-import LatestNews from "../LatestNews/LatestNews";
+
 import Nabar from "../Navbar/Nabar";
-import Provide from "../Provide/Provide";
 
 export default function SearchResult() {
   const [data, useData] = useState();
@@ -23,11 +19,6 @@ export default function SearchResult() {
         <h2>{data}</h2>
       </div>
 
-      <Experence />
-      <Provide />
-      <Doctor />
-      <Appintment title="Do you need an appointment?" />
-      <LatestNews />
       <Footer />
     </>
   );
