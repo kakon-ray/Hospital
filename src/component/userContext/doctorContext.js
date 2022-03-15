@@ -21,7 +21,7 @@ export const DoctorProvider = (props) => {
                 patients with chronic conditions.`,
     },
     {
-      title: "Pritis Trafdar",
+      title: "Taniya",
       department: "Medicin",
       img: "https://img.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg",
       description: `A pathologist is a physician who studies body fluids and
