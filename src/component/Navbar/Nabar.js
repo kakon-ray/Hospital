@@ -12,9 +12,15 @@ import { Link } from "react-router-dom";
 
 import nav from "./Navbar.css";
 
-export default function Nabar() {
-  const [show, setShow] = useState(false);
+// redirect search result page
+import { useHistory } from "react-router-dom";
 
+export default function Nabar(props) {
+  const [show, setShow] = useState(false);
+  // navbar search input value
+  const [search, setSearch] = useState("");
+
+  // navbar toggle  search input method
   function handleshow(e) {
     e.preventDefault();
     if (show === false) {
@@ -24,8 +30,27 @@ export default function Nabar() {
     }
   }
 
+  // navbar search input value onchange
+  const onSearchChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  // useing search result show search result page
+  const history = useHistory();
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    history.push(`/searchresult`);
+    props.func(search);
+  };
+
   return (
-    <Navbar bg="light" expand="lg" className={`${nav.nav} navbar py-0`}>
+    <Navbar
+      sticky="top"
+      bg="light"
+      expand="lg"
+      className={`${nav.nav} navbar py-0`}
+    >
       <Container fluid>
         <div className="logo">
           <Link to="/" style={{ textDecoration: "none" }}>
@@ -78,10 +103,16 @@ export default function Nabar() {
                 placeholder="Enter Search Value"
                 className="me-2 form-control-navbar"
                 aria-label="Search"
+                onChange={onSearchChange}
               />
             ) : null}
             {show ? (
-              <button id="formInput" className="btn btn-outline-info me-2 mt-1">
+              <button
+                id="formInput"
+                className="btn btn-outline-info me-2 mt-1"
+                type="submit"
+                onClick={handleSearch}
+              >
                 Search
               </button>
             ) : null}

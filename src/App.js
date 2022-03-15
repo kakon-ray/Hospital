@@ -10,6 +10,7 @@ import { UserProvider } from "./component/userContext/userContext";
 import { DoctorProvider } from "./component/userContext/doctorContext";
 import { NewsProvider } from "./component/userContext/latestNewsContext";
 import { SliderProvider } from "./component/userContext/sliderContext";
+import SearchResult from "./component/Page/SearchResult";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
                   <Route exact path="/appointment" component={Appointment} />
                   <Route exact path="/clinic" component={AboutOurClinic} />
                   <Route exact path="/contact" component={ContactMe} />
+                  <Route exact path="/searchresult" component={SearchResult} />
                 </Switch>
               </Router>
             </SliderProvider>
