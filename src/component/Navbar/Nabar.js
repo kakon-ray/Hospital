@@ -106,7 +106,7 @@ export default function Nabar(props) {
               <FormControl
                 type="search"
                 id="formInput"
-                placeholder="Enter Search Value"
+                placeholder="Search Doctor"
                 className="me-2 form-control-navbar"
                 aria-label="Search"
                 onChange={onSearchChange}
