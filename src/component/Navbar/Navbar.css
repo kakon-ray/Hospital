@@ -60,7 +60,7 @@
 }
 
 .logo {
-  width: 300px;
+  width: 400px;
   text-decoration: none;
 }
 
@@ -85,4 +85,7 @@
 }
 .dropdown-toggle.active {
   color: #61dafb !important;
+}
+.navbar-light .navbar-nav .show > .nav-link {
+  color: rgb(21, 197, 197) !important;
 }

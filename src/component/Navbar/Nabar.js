@@ -61,8 +61,11 @@ export default function Nabar(props) {
       setActiveTab("appointment");
     } else if (location.pathname === "/clinic") {
       setActiveTab("clinic");
+    } else if (location.pathname === "/contact") {
+      setActiveTab("contact");
     }
   }, [location]);
+
   return (
     <Navbar
       sticky="top"
@@ -127,7 +130,14 @@ export default function Nabar(props) {
             </NavDropdown>
 
             <Link to="/contact" style={{ textDecoration: "none" }}>
-              <Nav.Link href="/contact">Contact</Nav.Link>
+              <Nav.Link
+                className={`${
+                  activeTab === "contact" ? "active" : ""
+                } nav-link`}
+                onClick={() => setActiveTab("contact")}
+              >
+                Contact
+              </Nav.Link>
             </Link>
           </Nav>
           <Form className="d-flex nav-form justify-content-center">
