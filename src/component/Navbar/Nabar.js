@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Navbar,
   Container,
@@ -22,6 +22,8 @@ export default function Nabar(props) {
   const [show, setShow] = useState(false);
   // navbar search input value
   const [search, setSearch] = useState("");
+  // this is active nav manue state
+  const [activeTab, setActiveTab] = useState("Home");
 
   // navbar toggle  search input method
   function handleshow(e) {
@@ -50,6 +52,17 @@ export default function Nabar(props) {
     }
   };
 
+  // this is active navmanue item work
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setActiveTab("Home");
+    } else if (location.pathname === "/appointment") {
+      setActiveTab("appointment");
+    } else if (location.pathname === "/clinic") {
+      setActiveTab("clinic");
+    }
+  }, [location]);
   return (
     <Navbar
       sticky="top"
@@ -69,14 +82,33 @@ export default function Nabar(props) {
         <Navbar.Collapse id="navbarScroll">
           <Nav className="ms-auto m-5 my-2 my-lg-0" navbarScroll>
             <Link to="/" style={{ textDecoration: "none" }}>
-              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link
+                className={`${activeTab === "Home" ? "active" : ""} nav-link`}
+                onClick={() => setActiveTab("Home")}
+              >
+                Home
+              </Nav.Link>
             </Link>
 
             <Link to="/appointment" style={{ textDecoration: "none" }}>
-              <Nav.Link href="/appointment">Appointment</Nav.Link>
+              <Nav.Link
+                href="/appointment"
+                className={`${
+                  activeTab === "appointment" ? "active" : ""
+                } nav-link`}
+                onClick={() => setActiveTab("appointment")}
+              >
+                Appointment
+              </Nav.Link>
             </Link>
             <Link to="/clinic" style={{ textDecoration: "none" }}>
-              <Nav.Link href="/clinic">About Our Clinic</Nav.Link>
+              <Nav.Link
+                href="/clinic"
+                className={`${activeTab === "clinic" ? "active" : ""} nav-link`}
+                onClick={() => setActiveTab("clinic")}
+              >
+                About Our Clinic
+              </Nav.Link>
             </Link>
 
             <NavDropdown title="Other" id="navbarScrollingDropdown">
@@ -94,9 +126,6 @@ export default function Nabar(props) {
               </Link>
             </NavDropdown>
 
-            <Nav.Link href="/" disabled>
-              Actiion
-            </Nav.Link>
             <Link to="/contact" style={{ textDecoration: "none" }}>
               <Nav.Link href="/contact">Contact</Nav.Link>
             </Link>
