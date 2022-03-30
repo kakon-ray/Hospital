@@ -11,6 +11,7 @@ import { DoctorProvider } from "./component/userContext/doctorContext";
 import { NewsProvider } from "./component/userContext/latestNewsContext";
 import { SliderProvider } from "./component/userContext/sliderContext";
 import SearchResult from "./component/Page/SearchResult";
+import PageNotFound from "./component/PageNotFound/PageNotFound";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                   <Route exact path="/clinic" component={AboutOurClinic} />
                   <Route exact path="/contact" component={ContactMe} />
                   <Route exact path="/searchresult" component={SearchResult} />
+                  <Route exact path="*" component={PageNotFound} />
                 </Switch>
               </Router>
             </SliderProvider>

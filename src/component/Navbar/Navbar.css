@@ -63,6 +63,9 @@
   width: 400px;
   text-decoration: none;
 }
+.logo :hover {
+  color: #61dafb !important;
+}
 
 #formInput {
   z-index: 1;
@@ -87,9 +90,8 @@
   color: #61dafb !important;
 }
 .navbar-light .navbar-nav .show > .nav-link {
-  color: rgb(117, 115, 112);
+  color: rgb(21, 197, 197) !important;
 }
-
 .dropdown-menu {
   min-width: 12rem !important;
 }
