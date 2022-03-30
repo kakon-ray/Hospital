@@ -4,6 +4,7 @@ import React, { useContext, useState } from "react";
 import { Card, Button, Col } from "react-bootstrap";
 import Footer from "../Footer/Footer";
 import Nabar from "../Navbar/Nabar";
+import PageBanner from "../PageBanner.js/PageBanner";
 import { doctorContext } from "../userContext/doctorContext";
 
 export default function SearchResult() {
@@ -21,6 +22,7 @@ export default function SearchResult() {
   return (
     <>
       <Nabar func={pull_data} />
+      <PageBanner page="Search Result " />
 
       {!data ? (
         <div className="text-center my-5 container">

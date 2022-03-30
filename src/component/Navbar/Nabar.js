@@ -86,6 +86,7 @@ export default function Nabar(props) {
           <Nav className="ms-auto m-5 my-2 my-lg-0" navbarScroll>
             <Link to="/" style={{ textDecoration: "none" }}>
               <Nav.Link
+                href="/"
                 className={`${activeTab === "Home" ? "active" : ""} nav-link`}
                 onClick={() => setActiveTab("Home")}
               >
@@ -117,6 +118,7 @@ export default function Nabar(props) {
             <NavDropdown title="Other" id="navbarScrollingDropdown">
               <Link to="/" style={{ textDecoration: "none" }}>
                 <Nav.Link
+                  href="/"
                   className={`${activeTab === "Home" ? "active" : ""} nav-link`}
                   onClick={() => setActiveTab("Home")}
                 >
