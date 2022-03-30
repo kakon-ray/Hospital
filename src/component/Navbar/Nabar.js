@@ -84,61 +84,83 @@ export default function Nabar(props) {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="ms-auto m-5 my-2 my-lg-0" navbarScroll>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <p
-                className={`${activeTab === "Home" ? "active" : ""} nav-link`}
-                onClick={() => setActiveTab("Home")}
-              >
-                {" "}
-                Home
-              </p>
+            <Link
+              to="/"
+              style={{ textDecoration: "none" }}
+              className={`${activeTab === "Home" ? "active" : ""} nav-link`}
+              onClick={() => setActiveTab("Home")}
+            >
+              Home
             </Link>
 
-            <Link to="/appointment" style={{ textDecoration: "none" }}>
-              <p
+            <Link
+              to="/appointment"
+              style={{ textDecoration: "none" }}
+              className={`${
+                activeTab === "appointment" ? "active" : ""
+              } nav-link`}
+              onClick={() => setActiveTab("appointment")}
+            >
+              Appointment
+            </Link>
+            <Link
+              to="/clinic"
+              style={{ textDecoration: "none" }}
+              className={`${activeTab === "clinic" ? "active" : ""} nav-link`}
+              onClick={() => setActiveTab("clinic")}
+            >
+              About Our Clinic
+            </Link>
+
+            <NavDropdown title="Other" id="navbarScrollingDropdown">
+              <Link
+                to="/"
+                style={{ textDecoration: "none" }}
+                className={`${
+                  activeTab === "Home" ? "active" : ""
+                } nav-link  text-secandary`}
+                onClick={() => setActiveTab("Home")}
+              >
+                Home
+              </Link>
+
+              <Link
+                to="/appointment"
+                style={{ textDecoration: "none" }}
                 className={`${
                   activeTab === "appointment" ? "active" : ""
                 } nav-link`}
                 onClick={() => setActiveTab("appointment")}
               >
                 Appointment
-              </p>
-            </Link>
-            <Link to="/clinic" style={{ textDecoration: "none" }}>
-              <p
+              </Link>
+              <Link
+                to="/clinic"
+                style={{ textDecoration: "none" }}
                 className={`${activeTab === "clinic" ? "active" : ""} nav-link`}
                 onClick={() => setActiveTab("clinic")}
               >
                 About Our Clinic
-              </p>
-            </Link>
-
-            <NavDropdown title="Other" id="navbarScrollingDropdown">
-              <Link to="/clinic" style={{ textDecoration: "none" }}>
-                <p href="/" className=" nav-link">
-                  Actiion
-                </p>
               </Link>
-              <Link to="/clinic" style={{ textDecoration: "none" }}>
-                <p className="nav-link">About Our Clinic</p>
-              </Link>
-              <Link to="/appointment" style={{ textDecoration: "none" }}>
-                <p className="nav-link">Appointment</p>
-              </Link>
-              <Link to="/contact" style={{ textDecoration: "none" }}>
-                <p className="nav-link">Contact</p>
-              </Link>
-            </NavDropdown>
-
-            <Link to="/contact" style={{ textDecoration: "none" }}>
-              <p
+              <Link
+                to="/contact"
+                style={{ textDecoration: "none" }}
                 className={`${
                   activeTab === "contact" ? "active" : ""
                 } nav-link`}
                 onClick={() => setActiveTab("contact")}
               >
                 Contact
-              </p>
+              </Link>
+            </NavDropdown>
+
+            <Link
+              to="/contact"
+              style={{ textDecoration: "none" }}
+              className={`${activeTab === "contact" ? "active" : ""} nav-link`}
+              onClick={() => setActiveTab("contact")}
+            >
+              Contact
             </Link>
           </Nav>
           <Form className="d-flex nav-form justify-content-center">

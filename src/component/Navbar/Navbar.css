@@ -87,5 +87,9 @@
   color: #61dafb !important;
 }
 .navbar-light .navbar-nav .show > .nav-link {
-  color: rgb(21, 197, 197) !important;
+  color: rgb(117, 115, 112);
+}
+
+.dropdown-menu {
+  min-width: 12rem !important;
 }
