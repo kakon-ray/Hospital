@@ -14,7 +14,10 @@ export default function LatestNews() {
         <div className="title-width m-auto mb-5 bg-info"></div>
         <div className="row g-4">
           {users.map((user) => (
-            <Articale link={user.img} title={user.title} para={user.para} />
+            // console.log(user)
+            <React.Fragment key={user.id}>
+              <Articale link={user.img} title={user.title} para={user.para} />
+            </React.Fragment>
           ))}
         </div>
       </div>

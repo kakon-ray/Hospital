@@ -85,59 +85,60 @@ export default function Nabar(props) {
         <Navbar.Collapse id="navbarScroll">
           <Nav className="ms-auto m-5 my-2 my-lg-0" navbarScroll>
             <Link to="/" style={{ textDecoration: "none" }}>
-              <Nav.Link
+              <p
                 className={`${activeTab === "Home" ? "active" : ""} nav-link`}
                 onClick={() => setActiveTab("Home")}
               >
+                {" "}
                 Home
-              </Nav.Link>
+              </p>
             </Link>
 
             <Link to="/appointment" style={{ textDecoration: "none" }}>
-              <Nav.Link
-                href="/appointment"
+              <p
                 className={`${
                   activeTab === "appointment" ? "active" : ""
                 } nav-link`}
                 onClick={() => setActiveTab("appointment")}
               >
                 Appointment
-              </Nav.Link>
+              </p>
             </Link>
             <Link to="/clinic" style={{ textDecoration: "none" }}>
-              <Nav.Link
-                href="/clinic"
+              <p
                 className={`${activeTab === "clinic" ? "active" : ""} nav-link`}
                 onClick={() => setActiveTab("clinic")}
               >
                 About Our Clinic
-              </Nav.Link>
+              </p>
             </Link>
 
             <NavDropdown title="Other" id="navbarScrollingDropdown">
               <Link to="/clinic" style={{ textDecoration: "none" }}>
-                <Nav.Link href="/">Actiion</Nav.Link>
+                <p href="/" className=" nav-link">
+                  Actiion
+                </p>
               </Link>
               <Link to="/clinic" style={{ textDecoration: "none" }}>
-                <Nav.Link href="/clinic">About Our Clinic</Nav.Link>
+                <p className="nav-link">About Our Clinic</p>
               </Link>
               <Link to="/appointment" style={{ textDecoration: "none" }}>
-                <Nav.Link href="/appointment">Appointment</Nav.Link>
+                <p className="nav-link">Appointment</p>
               </Link>
               <Link to="/contact" style={{ textDecoration: "none" }}>
-                <Nav.Link href="/contact">Contact</Nav.Link>
+                <p className="nav-link">Contact</p>
               </Link>
             </NavDropdown>
 
             <Link to="/contact" style={{ textDecoration: "none" }}>
-              <Nav.Link
+              <p
                 className={`${
                   activeTab === "contact" ? "active" : ""
                 } nav-link`}
                 onClick={() => setActiveTab("contact")}
               >
                 Contact
-              </Nav.Link>
+              </p>
             </Link>
           </Nav>
           <Form className="d-flex nav-form justify-content-center">

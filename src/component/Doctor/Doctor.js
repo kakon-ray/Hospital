@@ -12,12 +12,14 @@ export default function Doctor() {
         <div className="title-width m-auto mb-5 bg-info"></div>
         <div className="row g-5">
           {users.map((user) => (
-            <DoctorArtical
-              title={user.title}
-              department={user.department}
-              para={user.description}
-              img={user.img}
-            />
+            <React.Fragment key={user.id}>
+              <DoctorArtical
+                title={user.title}
+                department={user.department}
+                para={user.description}
+                img={user.img}
+              />
+            </React.Fragment>
           ))}
         </div>
       </div>

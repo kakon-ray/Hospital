@@ -49,20 +49,22 @@ export default function SearchResult() {
             <div className="row g-3">
               {userResult.length > 0 ? (
                 userResult.map((user) => (
-                  <Col className="col-md-4">
-                    <Card style={{ width: "22rem" }} className="mx-auto">
-                      <Card.Img
-                        variant="top"
-                        src={user.img}
-                        style={{ height: "250px" }}
-                      />
-                      <Card.Body>
-                        <Card.Title>{user.title}</Card.Title>
-                        <Card.Text>{user.department}</Card.Text>
-                        <Card.Text>{user.description}</Card.Text>
-                      </Card.Body>
-                    </Card>
-                  </Col>
+                  <React.Fragment key={user.id}>
+                    <Col className="col-md-4">
+                      <Card style={{ width: "22rem" }} className="mx-auto">
+                        <Card.Img
+                          variant="top"
+                          src={user.img}
+                          style={{ height: "250px" }}
+                        />
+                        <Card.Body>
+                          <Card.Title>{user.title}</Card.Title>
+                          <Card.Text>{user.department}</Card.Text>
+                          <Card.Text>{user.description}</Card.Text>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                  </React.Fragment>
                 ))
               ) : (
                 <h1>No Result Found</h1>
