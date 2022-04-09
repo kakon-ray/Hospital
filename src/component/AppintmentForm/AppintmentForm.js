@@ -78,10 +78,11 @@ export default function AppintmentForm() {
           <div className="col-lg-8">
             <div className="card mt-5 py-5 pb-5 px-2">
               <div>
+                {/* using modal and user message */}
                 <Modal show={show} onHide={handleClose}>
                   <Modal.Header closeButton>
                     <Modal.Title className="appointmentText">
-                      Recently Book Appintment Information
+                      Successfully Submited
                     </Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
@@ -127,7 +128,7 @@ export default function AppintmentForm() {
                   }
                 >
                   <div className="row g-2">
-                    <div className="col-lg-6">
+                    <div className="col-lg-6" style={{ marginTop: "18px" }}>
                       <label className="error-text">
                         {" "}
                         {!name ? (
@@ -170,6 +171,7 @@ export default function AppintmentForm() {
                       </label>
 
                       <Form.Select
+                        style={{ marginTop: "10px" }}
                         aria-label="Default select example"
                         onChange={updateCatagory}
                       >
@@ -178,7 +180,7 @@ export default function AppintmentForm() {
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                       </Form.Select>
-                      <label className="mt-3 error-text">
+                      <label className="mt-2 error-text">
                         {!birthDay ? (
                           <span className="text-danger">
                             Enter Your Dath of Birthday
@@ -198,7 +200,7 @@ export default function AppintmentForm() {
 
                     <div className="row">
                       <div className="col"></div>
-                      <div className="col  d-flex justify-content-end m-0 p-0">
+                      <div className="col  d-flex justify-content-end">
                         <button
                           type="submit"
                           onClick={

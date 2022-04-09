@@ -12,7 +12,6 @@ import Slider from "../Slider/Slider";
 export default function AboutOurClinic() {
   return (
     <>
-      <Nabar />
       <PageBanner page="Clinic" />
       <Clinic />
       <ClinicDescription />

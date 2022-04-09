@@ -12,10 +12,14 @@ import { NewsProvider } from "./component/userContext/latestNewsContext";
 import { SliderProvider } from "./component/userContext/sliderContext";
 import SearchResult from "./component/Page/SearchResult";
 import PageNotFound from "./component/PageNotFound/PageNotFound";
+import Login from "./component/Login/Login";
+import Nabar from "./component/Navbar/Nabar";
+import Register from "./component/Register/Register";
 
 function App() {
   return (
     <div className="App">
+      <Nabar />
       <UserProvider>
         <DoctorProvider>
           <NewsProvider>
@@ -26,6 +30,8 @@ function App() {
                 <Route path="/clinic" element={<AboutOurClinic />} />
                 <Route path="/contact" element={<ContactMe />} />
                 <Route path="/searchresult" element={<SearchResult />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="*" element={<PageNotFound />} />
               </Routes>
             </SliderProvider>

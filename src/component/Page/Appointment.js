@@ -9,7 +9,6 @@ import Slider from "../Slider/Slider";
 export default function Home() {
   return (
     <>
-      <Nabar />
       <PageBanner page="Appintment" />
       <AppintmentForm />
       <Provide />

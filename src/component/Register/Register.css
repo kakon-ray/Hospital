@@ -1,0 +1,68 @@
+/* ============================================
+Start Login section
+================================================*/
+:root {
+  --main-color: #0dcaf0;
+  --main-color-hover: #0fbadc;
+}
+#register .contact-section {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+#register .cart {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#register input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+
+  box-sizing: border-box;
+}
+
+#register input[type="submit"] {
+  width: 100%;
+  background-color: var(--main-color);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+
+  cursor: pointer;
+  font-weight: 700;
+}
+#register input[type="submit"]:hover {
+  background-color: var(--main-color-hover);
+}
+#register .contact-section p {
+  color: var(--main-color);
+  font-size: 30px;
+  font-family: 700px;
+}
+
+#register .cart {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  #register .cart {
+    max-width: 80%;
+  }
+}

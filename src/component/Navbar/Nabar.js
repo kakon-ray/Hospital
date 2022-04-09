@@ -160,12 +160,18 @@ export default function Nabar(props) {
               Contact
             </Link>
           </Nav>
-          <button type="submit" className="btn btn-outline-info py-1">
-            Register
-          </button>
-          <button type="submit" className="btn btn-info text-light py-1 mx-3">
-            Login
-          </button>
+
+          <Link to="/register">
+            <button type="submit" className="btn btn-outline-info py-1">
+              Register
+            </button>
+          </Link>
+          <Link to="/login">
+            <button type="submit" className="btn btn-info text-light py-1 mx-3">
+              Login
+            </button>
+          </Link>
+
           <Form className="d-flex nav-form justify-content-center">
             {show ? (
               <FormControl

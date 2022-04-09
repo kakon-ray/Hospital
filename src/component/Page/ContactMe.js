@@ -10,7 +10,6 @@ import Slider from "../Slider/Slider";
 export default function ContactMe() {
   return (
     <>
-      <Nabar />
       <PageBanner page="Contact" />
       <Contact />
       <Footer />

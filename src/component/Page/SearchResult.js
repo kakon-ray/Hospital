@@ -21,7 +21,6 @@ export default function SearchResult() {
   console.log(userResult);
   return (
     <>
-      <Nabar func={pull_data} />
       <PageBanner page="Search Result " />
 
       {!data ? (

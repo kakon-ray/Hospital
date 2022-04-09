@@ -7,9 +7,21 @@
   font-family: "Roboto Condensed", sans-serif;
 }
 
+/* global style */
+.btn {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  -ms-border-radius: 0 !important;
+  -o-border-radius: 0 !important;
+}
+.modal-footer {
+  justify-content: start !important;
+}
+
 /* ==========================================
         Start Header Nabar Section 
-=============================================*/
+=============================================
 
 header .form-control {
   position: absolute;
@@ -296,12 +308,4 @@ header .form-control:focus {
 
 .contact-section input {
   border-left: none;
-}
-
-.btn {
-  border-radius: 0 !important;
-  -webkit-border-radius: 0 !important;
-  -moz-border-radius: 0 !important;
-  -ms-border-radius: 0 !important;
-  -o-border-radius: 0 !important;
 }

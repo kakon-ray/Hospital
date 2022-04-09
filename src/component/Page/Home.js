@@ -12,8 +12,6 @@ import Slider from "../Slider/Slider";
 export default function Home() {
   return (
     <>
-      <Nabar />
-
       <Slider />
       <Provide />
       <Experence />
