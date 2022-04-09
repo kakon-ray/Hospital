@@ -13,7 +13,6 @@ import { Link } from "react-router-dom";
 import nav from "./Navbar.css";
 
 // redirect search result page
-import { useHistory } from "react-router-dom";
 
 // current pathname
 import { useLocation } from "react-router-dom";
@@ -41,12 +40,12 @@ export default function Nabar(props) {
   };
 
   // useing search result show search result page
-  const history = useHistory();
+
   const location = useLocation();
   const handleSearch = (e) => {
     e.preventDefault();
 
-    history.push(`/searchresult`);
+    // history.push(`/searchresult`);
     if (location.pathname === "/searchresult") {
       props.func(search);
     }
@@ -83,96 +82,90 @@ export default function Nabar(props) {
         </div>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav className="ms-auto m-5 my-2 my-lg-0" navbarScroll>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <Nav.Link
-                href="/"
+          <Nav className="mx-auto m-5 my-2 my-lg-0" navbarScroll>
+            <Link
+              to="/"
+              style={{ textDecoration: "none" }}
+              className={`${activeTab === "Home" ? "active" : ""} nav-link`}
+              onClick={() => setActiveTab("Home")}
+            >
+              Home
+            </Link>
+
+            <Link
+              to="/appointment"
+              style={{ textDecoration: "none" }}
+              className={`${
+                activeTab === "appointment" ? "active" : ""
+              } nav-link`}
+              onClick={() => setActiveTab("appointment")}
+            >
+              Appointment
+            </Link>
+            <Link
+              to="/clinic"
+              style={{ textDecoration: "none" }}
+              className={`${activeTab === "clinic" ? "active" : ""} nav-link`}
+              onClick={() => setActiveTab("clinic")}
+            >
+              About Our Clinic
+            </Link>
+
+            <NavDropdown title="Other" id="navbarScrollingDropdown">
+              <Link
+                to="/"
+                style={{ textDecoration: "none" }}
                 className={`${activeTab === "Home" ? "active" : ""} nav-link`}
                 onClick={() => setActiveTab("Home")}
               >
                 Home
-              </Nav.Link>
-            </Link>
+              </Link>
 
-            <Link to="/appointment" style={{ textDecoration: "none" }}>
-              <Nav.Link
-                href="/appointment"
+              <Link
+                to="/appointment"
+                style={{ textDecoration: "none" }}
                 className={`${
                   activeTab === "appointment" ? "active" : ""
                 } nav-link`}
                 onClick={() => setActiveTab("appointment")}
               >
                 Appointment
-              </Nav.Link>
-            </Link>
-            <Link to="/clinic" style={{ textDecoration: "none" }}>
-              <Nav.Link
-                href="/clinic"
+              </Link>
+              <Link
+                to="/clinic"
+                style={{ textDecoration: "none" }}
                 className={`${activeTab === "clinic" ? "active" : ""} nav-link`}
                 onClick={() => setActiveTab("clinic")}
               >
                 About Our Clinic
-              </Nav.Link>
-            </Link>
-
-            <NavDropdown title="Other" id="navbarScrollingDropdown">
-              <Link to="/" style={{ textDecoration: "none" }}>
-                <Nav.Link
-                  href="/"
-                  className={`${activeTab === "Home" ? "active" : ""} nav-link`}
-                  onClick={() => setActiveTab("Home")}
-                >
-                  Home
-                </Nav.Link>
               </Link>
-
-              <Link to="/appointment" style={{ textDecoration: "none" }}>
-                <Nav.Link
-                  href="/appointment"
-                  className={`${
-                    activeTab === "appointment" ? "active" : ""
-                  } nav-link`}
-                  onClick={() => setActiveTab("appointment")}
-                >
-                  Appointment
-                </Nav.Link>
-              </Link>
-              <Link to="/clinic" style={{ textDecoration: "none" }}>
-                <Nav.Link
-                  href="/clinic"
-                  className={`${
-                    activeTab === "clinic" ? "active" : ""
-                  } nav-link`}
-                  onClick={() => setActiveTab("clinic")}
-                >
-                  About Our Clinic
-                </Nav.Link>
-              </Link>
-              <Link to="/contact" style={{ textDecoration: "none" }}>
-                <Nav.Link
-                  href="/contact"
-                  className={`${
-                    activeTab === "contact" ? "active" : ""
-                  } nav-link`}
-                  onClick={() => setActiveTab("contact")}
-                >
-                  Contact
-                </Nav.Link>
-              </Link>
-            </NavDropdown>
-
-            <Link to="/contact" style={{ textDecoration: "none" }}>
-              <Nav.Link
-                href="/contact"
+              <Link
+                to="/contact"
+                style={{ textDecoration: "none" }}
                 className={`${
                   activeTab === "contact" ? "active" : ""
                 } nav-link`}
                 onClick={() => setActiveTab("contact")}
               >
                 Contact
-              </Nav.Link>
+              </Link>
+            </NavDropdown>
+
+            <Link
+              to="/contact"
+              style={{ textDecoration: "none" }}
+              className={`${activeTab === "contact" ? "active" : ""} nav-link`}
+              onClick={() => setActiveTab("contact")}
+            >
+              Contact
             </Link>
           </Nav>
+          <button type="submit" className="btn btn-outline-info py-1">
+            Register
+          </button>
+          <button type="submit" className="btn btn-info text-light py-1 mx-3">
+            Login
+          </button>
           <Form className="d-flex nav-form justify-content-center">
             {show ? (
               <FormControl
@@ -187,7 +180,7 @@ export default function Nabar(props) {
             {show ? (
               <button
                 id="formInput"
-                className="btn btn-outline-info me-2 mt-1"
+                className="btn  me-2 mt-1"
                 type="submit"
                 onClick={handleSearch}
               >
@@ -196,8 +189,9 @@ export default function Nabar(props) {
             ) : null}
 
             <i
-              className={`fas fa-search me-4 ${show ? "pt-3" : ""} pt-2 pe-2`}
+              className={`fas fa-search me-4 ${show ? "pt-3" : ""} pt-1 pe-2`}
               onClick={(e) => handleshow(e)}
+              style={{ cursor: "pointer" }}
             ></i>
           </Form>
         </Navbar.Collapse>

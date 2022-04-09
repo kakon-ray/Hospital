@@ -1,9 +1,5 @@
-.navbar {
-  height: 90px;
-}
-
 .dropdown-menu[data-bs-popper] {
-  top: 62px;
+  top: 49px;
 }
 
 .form-control-navbar {
@@ -59,10 +55,10 @@
   }
 }
 
-.logo {
+/* .logo {
   width: 400px;
   text-decoration: none;
-}
+} */
 .logo :hover {
   color: #61dafb !important;
 }
@@ -94,4 +90,10 @@
 }
 .dropdown-menu {
   min-width: 12rem !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .logo-style {
+    width: 250px;
+  }
 }

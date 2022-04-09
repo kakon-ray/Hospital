@@ -114,7 +114,9 @@ export default function AppintmentForm() {
               <div className="title-width m-auto my-4 bg-info"></div>
 
               <div className="row mx-2">
-                <div className="mb-4 text-center error-text">{notSubmit}</div>
+                <div className="mb-4 text-center error-text text-danger">
+                  {notSubmit}
+                </div>
                 <form
                   onSubmit={
                     validator.isEmail(email)
@@ -128,7 +130,11 @@ export default function AppintmentForm() {
                     <div className="col-lg-6">
                       <label className="error-text">
                         {" "}
-                        {!name ? "Enter Your Name" : "Ok"}
+                        {!name ? (
+                          <span className="text-danger">Enter Your Name</span>
+                        ) : (
+                          "Ok"
+                        )}
                       </label>
 
                       <Form.Control
@@ -138,9 +144,13 @@ export default function AppintmentForm() {
                         placeholder="Your Name"
                       />
                       <label className="mt-3 error-text">
-                        {!validator.isEmail(email)
-                          ? "Please Enter Valid Email"
-                          : "Ok"}
+                        {!validator.isEmail(email) ? (
+                          <span className="text-danger">
+                            Please Enter Valid Email
+                          </span>
+                        ) : (
+                          "Ok"
+                        )}
                       </label>
 
                       <Form.Control
@@ -152,7 +162,11 @@ export default function AppintmentForm() {
                     </div>
                     <div className="col-lg-6">
                       <label className="error-text">
-                        {!catagory ? "Enter Catagory" : "Ok"}
+                        {!catagory ? (
+                          <span className="text-danger">Enter Catagory</span>
+                        ) : (
+                          "Ok"
+                        )}
                       </label>
 
                       <Form.Select
@@ -165,7 +179,13 @@ export default function AppintmentForm() {
                         <option value="3">Three</option>
                       </Form.Select>
                       <label className="mt-3 error-text">
-                        {!birthDay ? "Enter Your Dath of Birthday" : "Ok"}
+                        {!birthDay ? (
+                          <span className="text-danger">
+                            Enter Your Dath of Birthday
+                          </span>
+                        ) : (
+                          "Ok"
+                        )}
                       </label>
 
                       <Form.Control
