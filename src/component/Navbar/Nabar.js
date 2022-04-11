@@ -168,7 +168,7 @@ export default function Nabar(props) {
           </Link>
           <Link to="/login">
             <button type="submit" className="btn btn-info text-light py-1 mx-3">
-              Login
+              Sign in
             </button>
           </Link>
 

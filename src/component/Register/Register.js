@@ -1,10 +1,12 @@
 import React from "react";
+import PageBanner from "../PageBanner.js/PageBanner";
 import "./Register.css";
 
 const Register = () => {
   return (
-    <div className="mt-4" id="register">
-      <section className="form" id="contact">
+    <div id="register">
+      <PageBanner page="Registration" />
+      <section className="form container-fluid" id="contact">
         <div className="cart">
           <div className="contact-section">
             <p>Create Your Account</p>

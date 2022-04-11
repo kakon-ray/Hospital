@@ -198,29 +198,23 @@ export default function AppintmentForm() {
                       />
                     </div>
 
-                    <div className="row">
-                      <div className="col"></div>
-                      <div className="col  d-flex justify-content-end">
-                        <button
-                          type="submit"
-                          onClick={
-                            validator.isEmail(email) ? handleShow : doNotSubmit
-                          }
-                          className="btn btn-light mt-5 px-4"
-                        >
-                          Submit
-                        </button>
-                      </div>
-                      <div className="col d-flex justify-content-start ms-2 p-0">
-                        <button
-                          type="reset"
-                          className="btn btn-light mt-5 px-3"
-                          onClick={resetInput}
-                        >
-                          Rest Form
-                        </button>
-                      </div>
-                      <div className="col"></div>
+                    <div className="row d-flex justify-content-center p-0">
+                      {/* <button
+                        type="reset"
+                        className="btn btn-light mt-5 w-50 mx-auto"
+                        onClick={resetInput}
+                      >
+                        Rest Form
+                      </button> */}
+                      <button
+                        type="submit"
+                        onClick={
+                          validator.isEmail(email) ? handleShow : doNotSubmit
+                        }
+                        className="btn btn-light mt-5 w-25 mx-auto"
+                      >
+                        Submit
+                      </button>
                     </div>
                   </div>
                 </form>

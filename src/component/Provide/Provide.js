@@ -15,6 +15,7 @@ export default function Provide() {
         <div className="row py-3">
           {users.map((user) => (
             <Article
+              key={user.id}
               title={user.title}
               icon={user.icon}
               description={user.description}

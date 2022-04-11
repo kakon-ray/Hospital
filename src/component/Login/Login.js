@@ -1,10 +1,12 @@
 import React from "react";
+import PageBanner from "../PageBanner.js/PageBanner";
 import "./Login.css";
 
 const Login = () => {
   return (
-    <div className="mt-5 pt-3" id="login">
-      <section className="form" id="contact">
+    <div className="" id="login">
+      <PageBanner page="Login" />
+      <section className="form container-fluid" id="contact">
         <div className="cart">
           <div className="contact-section">
             <p>Please Login</p>

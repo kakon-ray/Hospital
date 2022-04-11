@@ -2,9 +2,8 @@ import React from "react";
 
 export default function PageBanner({ page }) {
   const myStyle = {
-    backgroundImage:
-      "url('https://andshop-react.netlify.app/static/media/common_bg.7b040441.png')",
-    height: "40vh",
+    backgroundImage: "url('https://static.dw.com/image/50927628_101.jpg')",
+    height: "50vh",
     fontSize: "50px",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
@@ -16,7 +15,7 @@ export default function PageBanner({ page }) {
       style={myStyle}
       className="position-relative mb-5 d-flex justify-content-center align-items-center"
     >
-      <h1 style={{ color: "#fff" }}>{page}</h1>
+      <h1 style={{ color: "#0dcaf0" }}>{page}</h1>
       <div className="position-absolute page text-light pageStyle"> </div>
     </div>
   );

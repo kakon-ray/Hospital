@@ -4,9 +4,9 @@ import "./Experence.css";
 
 export default function Experence() {
   return (
-    <section class="enperence-section text-center my-3 text-light">
-      <div class="container-fluid">
-        <div class="row">
+    <section className="enperence-section text-center my-3 text-light">
+      <div className="container-fluid">
+        <div className="row">
           <ExperenceArtical
             icon="fas fa-stethoscope"
             title="Skilled Doctors"
