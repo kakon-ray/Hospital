@@ -1,36 +1,58 @@
 import React from "react";
-import PageBanner from "../PageBanner.js/PageBanner";
-import "./Register.css";
+import { Card, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
-const Register = () => {
+export default function Login() {
   return (
-    <div id="register">
-      <PageBanner page="Registration" />
-      <section className="form container-fluid" id="contact">
-        <div className="cart">
-          <div className="contact-section">
-            <p>Create Your Account</p>
-            <input type="text" name="name" placeholder="Your Name" />
-            <input type="text" name="email" placeholder="Your Email" />
-            <input
-              type="text"
-              name="password"
-              placeholder="Enter Your Password"
-            />
-
-            <input type="submit" value="Submit" />
-            <div style={{ marginTop: "20px" }}>
-              <img
-                style={{ width: "50px", height: "50px", cursor: "pointer" }}
-                src="https://upload.wikimedia.org/wikipedia/commons/0/09/IOS_Google_icon.png"
-                alt=""
+    <div className="mt-4">
+      <div className="mx-auto w-50">
+        <Card style={{ width: "30rem" }} className="mx-auto rounded-0">
+          <Card.Body className="p-5">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Control
+                type="name"
+                placeholder="Enter Name"
+                className="rounded-0"
               />
-            </div>
-          </div>
-        </div>
-      </section>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Control
+                type="email"
+                placeholder="Enter Email"
+                className="rounded-0"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Control
+                type="password"
+                placeholder="Enter Password"
+                className="rounded-0"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Control
+                type="password"
+                placeholder="Enter Conform Password"
+                className="rounded-0"
+              />
+            </Form.Group>
+
+            <button className="btn btn-info w-100" type="submit">
+              SUBMIT
+            </button>
+          </Card.Body>
+          <p className="text-center">
+            Already have a account?{" "}
+            <Link to="/login" style={{ textDecoration: "none" }}>
+              <span className="text-info " style={{ cursor: "pointer" }}>
+                Login
+              </span>
+            </Link>
+          </p>
+        </Card>
+        <SocialLogin />
+      </div>
     </div>
   );
-};
-
-export default Register;
+}
