@@ -16,6 +16,8 @@ import Login from "./component/Login/Login";
 import Nabar from "./component/Navbar/Nabar";
 import Register from "./component/Register/Register";
 
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   return (
     <div className="App">

@@ -16,6 +16,10 @@ import nav from "./Navbar.css";
 
 // current pathname
 import { useLocation } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { signOut } from "firebase/auth";
+import img from "../../assets/img/user.png";
 
 export default function Nabar(props) {
   const [show, setShow] = useState(false);
@@ -64,6 +68,15 @@ export default function Nabar(props) {
       setActiveTab("contact");
     }
   }, [location]);
+
+  // user Authentication
+
+  const [user] = useAuthState(auth);
+  console.log(user);
+
+  const logout = () => {
+    signOut(auth);
+  };
 
   return (
     <Navbar
@@ -160,17 +173,51 @@ export default function Nabar(props) {
               Contact
             </Link>
           </Nav>
+          <Nav className="me-auto">
+            {!user ? (
+              <>
+                <button
+                  type="submit"
+                  className="btn btn-outline-info py-1 my-2"
+                >
+                  Register
+                </button>
 
-          <Link to="/register">
-            <button type="submit" className="btn btn-outline-info py-1">
-              Register
-            </button>
-          </Link>
-          <Link to="/login">
-            <button type="submit" className="btn btn-info text-light py-1 mx-3">
-              Sign in
-            </button>
-          </Link>
+                <button
+                  type="submit"
+                  className="btn btn-info text-light py-1 mx-3 my-2"
+                >
+                  Sign in
+                </button>
+              </>
+            ) : (
+              <NavDropdown
+                title={
+                  <img
+                    src={user?.photoURL ? user?.photoURL : img}
+                    style={{
+                      width: "35px",
+                      height: "35px",
+                      borderRadius: "50px",
+                    }}
+                    alt=""
+                  />
+                }
+                id="navbarScrollingDropdown"
+              >
+                <div className="text-center">
+                  <h6>{user?.displayName}</h6>
+                  <button
+                    type="submit"
+                    className="btn btn-link py-1 mx-3"
+                    onClick={logout}
+                  >
+                    Sign Out
+                  </button>
+                </div>
+              </NavDropdown>
+            )}
+          </Nav>
 
           <Form className="d-flex nav-form justify-content-center">
             {show ? (

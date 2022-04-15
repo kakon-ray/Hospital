@@ -1,11 +1,28 @@
 import React, { useState } from "react";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { FaGoogle } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import auth from "../../firebase.init";
+import { ToastContainer, toast } from "react-toastify";
 
 const SocialLogin = () => {
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+
+  let errorelement;
+
+  if (error) {
+    errorelement = <p className="text-center text-danger">{error.message}</p>;
+  }
+
+  if (user?.email) {
+    toast.success("Login Successful");
+    console.log("Login success");
+  }
+
   return (
     <div className="mt-3">
+      {errorelement}
       <div className="d-flex align-items-center justify-content-center">
         <div
           style={{ height: "1px", backgroundColor: "lightgray" }}
@@ -26,6 +43,7 @@ const SocialLogin = () => {
             backgroundColor: "#0dcaf0",
             color: "#fff",
           }}
+          onClick={() => signInWithGoogle()}
           className="btn  w-50 my-2 mx-auto"
         >
           <FaGoogle style={{ fontSize: "20px" }} />

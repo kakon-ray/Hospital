@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Button, Card, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
-
+import "./Login.css";
 export default function Login() {
   const emailRef = useRef("");
   const passwordRef = useRef("");
@@ -17,8 +17,8 @@ export default function Login() {
   };
   return (
     <div className="mt-4">
-      <div className="mx-auto w-50">
-        <Card style={{ width: "30rem" }} className="mx-auto rounded-0">
+      <div className="form-responsive mx-auto">
+        <Card className="mx-auto rounded-0">
           <Card.Body className="p-5">
             <Form onSubmit={signIn}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
