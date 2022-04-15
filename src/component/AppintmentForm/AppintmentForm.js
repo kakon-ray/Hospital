@@ -144,7 +144,7 @@ export default function AppintmentForm() {
                         onChange={updateName}
                         placeholder="Your Name"
                       />
-                      <label className="mt-3 error-text">
+                      <label className="mt-2 error-text">
                         {!validator.isEmail(email) ? (
                           <span className="text-danger">
                             Please Enter Valid Email

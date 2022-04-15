@@ -28,7 +28,7 @@ const SocialLogin = () => {
           }}
           className="btn  w-50 my-2 mx-auto"
         >
-          <FaGoogle style={{ fontSize: "25px" }} />
+          <FaGoogle style={{ fontSize: "20px" }} />
           <span className="ms-2">Sign in Google</span>
         </button>
         <button
@@ -40,7 +40,7 @@ const SocialLogin = () => {
           }}
           className="btn w-50 my-2 mx-auto"
         >
-          <FaFacebookF style={{ fontSize: "25px" }} />
+          <FaFacebookF style={{ fontSize: "20px" }} />
           <span className="ms-1">Sign in Facebook</span>
         </button>
       </div>
