@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+  useSignInWithGoogle,
+  useSignInWithFacebook,
+} from "react-firebase-hooks/auth";
 import { FaGoogle } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
@@ -8,14 +11,15 @@ import { ToastContainer, toast } from "react-toastify";
 
 const SocialLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-
+  const [signInWithFacebook, user1, loading1, error1] =
+    useSignInWithFacebook(auth);
   let errorelement;
 
   if (error) {
     errorelement = <p className="text-center text-danger">{error.message}</p>;
   }
 
-  if (user?.email) {
+  if (user?.email || user1?.email) {
     toast.success("Login Successful");
     console.log("Login success");
   }
@@ -50,6 +54,7 @@ const SocialLogin = () => {
           <span className="ms-2">Sign in Google</span>
         </button>
         <button
+          onClick={() => signInWithFacebook()}
           style={{
             height: "40px",
             borderRadius: "25px",
