@@ -36,8 +36,9 @@ export default function Login() {
       toast.error("Two Password does not match");
       return;
     }
-    if (password.length <= 6) {
+    if (password.length < 6) {
       toast.error("At least 6 characters set password");
+      return;
     }
     //check input null
     if (!email || !name || !password || !conformPassword) {
@@ -52,6 +53,11 @@ export default function Login() {
         toast.error(error.message);
       });
     await updateProfile({ displayName: name });
+
+    nameRef.current.value = "";
+    emailRef.current.value = "";
+    passwordRef.current.value = "";
+    conformpasswordRef.current.value = "";
   };
 
   if (loading || updating) {
