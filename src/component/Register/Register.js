@@ -31,14 +31,26 @@ export default function Login() {
     const password = passwordRef.current.value;
     const conformPassword = conformpasswordRef.current.value;
 
+    // password check
     if (password !== conformPassword) {
       toast.error("Two Password does not match");
       return;
     }
-
-    await createUserWithEmailAndPassword(email, password).then((res) => {
-      toast.success("Registation Successfull");
-    });
+    if (password.length <= 6) {
+      toast.error("At least 6 characters set password");
+    }
+    //check input null
+    if (!email || !name || !password || !conformPassword) {
+      toast.error("Please fulfillment input filed");
+      return;
+    }
+    await createUserWithEmailAndPassword(email, password)
+      .then((res) => {
+        toast.success("Registation Successfull");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
     await updateProfile({ displayName: name });
   };
 

@@ -8,7 +8,7 @@ import {
   FormControl,
 } from "react-bootstrap";
 // import { hide } from "react-modal/lib/helpers/ariaAppHider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import nav from "./Navbar.css";
 
@@ -78,6 +78,7 @@ export default function Nabar(props) {
     signOut(auth);
   };
 
+  const navigation = useNavigate();
   return (
     <Navbar
       sticky="top"
@@ -177,6 +178,7 @@ export default function Nabar(props) {
             {!user ? (
               <>
                 <button
+                  onClick={() => navigation("/register")}
                   type="submit"
                   className="btn btn-outline-info py-1 my-2"
                 >
@@ -184,6 +186,7 @@ export default function Nabar(props) {
                 </button>
 
                 <button
+                  onClick={() => navigation("/login")}
                   type="submit"
                   className="btn btn-info text-light py-1 mx-3 my-2"
                 >

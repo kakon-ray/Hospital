@@ -3,20 +3,43 @@ import { Button, Card, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Login.css";
+import {
+  useAuthState,
+  useSignInWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { toast, ToastContainer } from "react-toastify";
+
 export default function Login() {
   const emailRef = useRef("");
   const passwordRef = useRef("");
+
+  const [signInWithEmailAndPassword, loading, error] =
+    useSignInWithEmailAndPassword(auth);
 
   const signIn = (e) => {
     e.preventDefault();
 
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
+    if (!email || !password) {
+      toast.error("Please fulfillment input filed");
+      return;
+    }
+    signInWithEmailAndPassword(email, password);
 
-    console.log(email, password);
+    if (error) {
+      toast.error("Login faild");
+    }
+
+    // console.log(email, password);
+    emailRef.current.value = "";
+    passwordRef.current.value = "";
   };
   return (
     <div className="mt-4">
+      <ToastContainer position="top-center" reverseOrder={false} />
       <div className="form-responsive mx-auto">
         <Card className="mx-auto rounded-0">
           <Card.Body className="p-5">

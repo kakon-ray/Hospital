@@ -38,10 +38,10 @@ const SocialLogin = () => {
       <div className="icon-auth text-center d-flex flex-column justify-content-center">
         <button
           style={{
-            height: "45px",
+            height: "40px",
             borderRadius: "25px",
             backgroundColor: "#0dcaf0",
-            color: "#fff",
+            color: "#F5F5F5",
           }}
           onClick={() => signInWithGoogle()}
           className="btn  w-50 my-2 mx-auto"
@@ -51,10 +51,10 @@ const SocialLogin = () => {
         </button>
         <button
           style={{
-            height: "45px",
+            height: "40px",
             borderRadius: "25px",
-            backgroundColor: "#0dcaf0",
-            color: "#fff",
+            backgroundColor: "#000080",
+            color: "#D3D3D3",
           }}
           className="btn w-50 my-2 mx-auto"
         >
