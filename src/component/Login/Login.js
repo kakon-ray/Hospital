@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Button, Card, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Login.css";
 import {
@@ -18,6 +18,10 @@ export default function Login() {
   const [signInWithEmailAndPassword, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
+  let navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
   const signIn = (e) => {
     e.preventDefault();
 
@@ -27,7 +31,9 @@ export default function Login() {
       toast.error("Please fulfillment input filed");
       return;
     }
-    signInWithEmailAndPassword(email, password);
+    signInWithEmailAndPassword(email, password).then((res) => {
+      navigate(from, { replace: true });
+    });
 
     if (error) {
       toast.error("Login faild");
@@ -37,6 +43,7 @@ export default function Login() {
     emailRef.current.value = "";
     passwordRef.current.value = "";
   };
+
   return (
     <div className="mt-4">
       <ToastContainer position="top-center" reverseOrder={false} />

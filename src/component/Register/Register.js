@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Button, Card, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import {
   useCreateUserWithEmailAndPassword,
@@ -23,6 +23,10 @@ export default function Login() {
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   // update profile and setname
   const [updateProfile, updating, error1] = useUpdateProfile(auth);
+
+  let navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
 
   const createAccount = async (e) => {
     e.preventDefault();
@@ -48,6 +52,7 @@ export default function Login() {
     await createUserWithEmailAndPassword(email, password)
       .then((res) => {
         toast.success("Registation Successfull");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         toast.error(error.message);

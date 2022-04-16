@@ -17,6 +17,7 @@ import Nabar from "./component/Navbar/Nabar";
 import Register from "./component/Register/Register";
 
 import "react-toastify/dist/ReactToastify.css";
+import RequireAuth from "./component/RequireAuth/RequireAuth";
 
 function App() {
   return (
@@ -28,7 +29,14 @@ function App() {
             <SliderProvider>
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/appointment" element={<Appointment />} />
+                <Route
+                  path="/appointment"
+                  element={
+                    <RequireAuth>
+                      <Appointment />
+                    </RequireAuth>
+                  }
+                />
                 <Route path="/clinic" element={<AboutOurClinic />} />
                 <Route path="/contact" element={<ContactMe />} />
                 <Route path="/searchresult" element={<SearchResult />} />

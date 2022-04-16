@@ -8,11 +8,17 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import auth from "../../firebase.init";
 import { ToastContainer, toast } from "react-toastify";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SocialLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const [signInWithFacebook, user1, loading1, error1] =
     useSignInWithFacebook(auth);
+
+  let navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
   let errorelement;
 
   if (error) {
@@ -47,14 +53,22 @@ const SocialLogin = () => {
             backgroundColor: "#0dcaf0",
             color: "#F5F5F5",
           }}
-          onClick={() => signInWithGoogle()}
+          onClick={() =>
+            signInWithGoogle().then((res) => {
+              navigate(from, { replace: true });
+            })
+          }
           className="btn  w-50 my-2 mx-auto"
         >
           <FaGoogle style={{ fontSize: "20px" }} />
           <span className="ms-2">Sign in Google</span>
         </button>
         <button
-          onClick={() => signInWithFacebook()}
+          onClick={() =>
+            signInWithFacebook().then((res) => {
+              navigate(from, { replace: true });
+            })
+          }
           style={{
             height: "40px",
             borderRadius: "25px",
