@@ -35,6 +35,12 @@ export default function Login() {
     const password = passwordRef.current.value;
     const conformPassword = conformpasswordRef.current.value;
 
+    //check input null
+    if (!email || !name || !password || !conformPassword) {
+      toast.error("Please fulfillment input filed");
+      return;
+    }
+
     // password check
     if (password !== conformPassword) {
       toast.error("Two Password does not match");
@@ -44,15 +50,10 @@ export default function Login() {
       toast.error("At least 6 characters set password");
       return;
     }
-    //check input null
-    if (!email || !name || !password || !conformPassword) {
-      toast.error("Please fulfillment input filed");
-      return;
-    }
+
     await createUserWithEmailAndPassword(email, password)
       .then((res) => {
         toast.success("Registation Successfull");
-        navigate(from, { replace: true });
       })
       .catch((error) => {
         toast.error(error.message);
@@ -65,9 +66,9 @@ export default function Login() {
     conformpasswordRef.current.value = "";
   };
 
-  if (loading || updating) {
-    <Loding />;
-  }
+  // if (loading || updating) {
+  //   <Loding />;
+  // }
 
   return (
     <div className="mt-4">

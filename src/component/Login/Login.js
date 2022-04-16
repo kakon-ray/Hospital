@@ -15,7 +15,7 @@ export default function Login() {
   const emailRef = useRef("");
   const passwordRef = useRef("");
 
-  const [signInWithEmailAndPassword, loading, error] =
+  const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
   let navigate = useNavigate();
@@ -32,7 +32,7 @@ export default function Login() {
       return;
     }
     signInWithEmailAndPassword(email, password).then((res) => {
-      navigate(from, { replace: true });
+      setTimeout(navigate(from, { replace: true }), 2000);
     });
 
     if (error) {
