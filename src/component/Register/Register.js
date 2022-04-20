@@ -12,7 +12,7 @@ import { sendEmailVerification } from "firebase/auth";
 import Loding from "../Loding/Loding";
 import { ToastContainer, toast } from "react-toastify";
 
-export default function Login() {
+export default function Register() {
   const nameRef = useRef("");
   const emailRef = useRef("");
   const passwordRef = useRef("");
