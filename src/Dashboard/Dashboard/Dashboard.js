@@ -1,26 +1,91 @@
-import React from 'react';
-import { ListGroup } from 'react-bootstrap';
-import "./Dashboard.css"
+//import useState hook to create menu collapse state
+import React, { useState } from "react";
+
+//import react pro sidebar components
+import {
+  ProSidebar,
+  Menu,
+  MenuItem,
+  SidebarHeader,
+  SidebarFooter,
+  SidebarContent
+} from "react-pro-sidebar";
+
+//import icons from react icons
+import { FaList, FaRegHeart } from "react-icons/fa";
+import {
+  FiHome,
+  FiLogOut,
+  FiArrowLeftCircle,
+  FiArrowRightCircle
+} from "react-icons/fi";
+import { RiPencilLine } from "react-icons/ri";
+import { BiCog } from "react-icons/bi";
+
+//import sidebar css from react-pro-sidebar module and our custom css
+import "react-pro-sidebar/dist/css/styles.css";
+import "./Dashboard.css";
+import auth from "../../firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
+import img from "../../assets/img/user.png";
+
 const Dashboard = () => {
-    return (
-    <div className='container-fluid'>
-      <div className='row'>
-        <div className="col-md-3 profile-menue" style={{backgroundImage: `url("https://media.istockphoto.com/photos/doctor-treatment-patients-in-hospital-room-medical-professionals-help-picture-id1216214264?k=20&m=1216214264&s=170667a&w=0&h=CiBhmc_A_pKbKCHcHtFITbQu5iYnG3cqJFpqiJA89kU=")`, backgroundRepeat: 'no-repeat',background: "rgb(0, 0, 0)",background: "rgba(0, 0, 0, 0.5)",height:"100vh",opacity: "1"}}>
-            <ul>
-            <li>Profile</li>
-            <li>Add Profile</li>
-            <li>Update Profile</li>
-            <li>Delete Profile</li>
-            <li>Delete Account</li>
-            <li>Patent Appointment</li>
-           
-            </ul>
-        </div>
-   
-        <div className="col-md-9"></div>
+//create initial menuCollapse state using useState hook
+  const [menuCollapse, setMenuCollapse] = useState(false);
+    const [user] = useAuthState(auth);
+
+  //create a custom function that will change menucollapse state from false to true and true to false
+  const menuIconClick = () => {
+    //condition checking to change state from true to false and vice versa
+    menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
+  };
+
+  console.log(user)
+  
+  return (
+    <>
+      <div id="header">
+        {/* collapsed props to change menu size using menucollapse state */}
+        <ProSidebar collapsed={menuCollapse}>
+          <SidebarHeader>
+            <div className="logotext d-flex justify-content-center">
+              {/* small and big change using menucollapse state */}
+             {user ? <img src={user.photoURL} alt=""   style={{
+                      width: "50px",
+                      height: "50px",
+                      borderRadius: "50px",
+                    }}></img> :<img src={img} alt=""   style={{
+                      width: "50px",
+                      height: "50px",
+                      borderRadius: "50px",
+                    }}></img>}
+            </div>
+             <h5 className="text-center">{user.displayName}</h5>
+            <div className="closemenu" onClick={menuIconClick}>
+              {/* changing menu collapse icon on click */}
+              {menuCollapse ? <FiArrowRightCircle /> : <FiArrowLeftCircle />}
+            </div>
+          </SidebarHeader>
+          <SidebarContent>
+            <Menu iconShape="square">
+              <MenuItem active={true} icon={<FiHome />}>
+                Home
+              </MenuItem>
+              <MenuItem icon={<FaList />}>Category</MenuItem>
+              <MenuItem icon={<FaRegHeart />}>Favourite</MenuItem>
+              <MenuItem icon={<RiPencilLine />}>Author</MenuItem>
+              <MenuItem icon={<BiCog />}>Settings</MenuItem>
+            </Menu>
+          </SidebarContent>
+          <SidebarFooter>
+            <Menu iconShape="square">
+              <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
+            </Menu>
+          </SidebarFooter>
+        </ProSidebar>
       </div>
-        </div>
-    );
+    </>
+  );
 };
 
 export default Dashboard;
