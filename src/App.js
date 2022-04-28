@@ -19,6 +19,8 @@ import Register from "./component/Register/Register";
 import "react-toastify/dist/ReactToastify.css";
 import RequireAuth from "./component/RequireAuth/RequireAuth";
 
+import Dashboard from "./Dashboard/Dashboard/Dashboard";
+
 function App() {
   return (
     <div className="App">
@@ -34,6 +36,14 @@ function App() {
                   element={
                     <RequireAuth>
                       <Appointment />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path="/dashboard"
+                  element={
+                    <RequireAuth>
+                      <Dashboard />
                     </RequireAuth>
                   }
                 />

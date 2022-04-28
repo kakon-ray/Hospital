@@ -6,7 +6,7 @@ export default function ({ title, department, para, img, alt }) {
   return (
     <article className="col-lg-3 col-md-6">
       <div className="img-hover">
-        <img src={img} alt={alt} className="image"></img>;
+        <img src={img} alt={alt} className="image"></img>
         <div className="overlay">
           <div className="text ">
             <a href="#">

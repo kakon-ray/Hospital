@@ -11,7 +11,7 @@ export default function Doctor() {
         <h1 className="text-center pb-3">Our Doctor</h1>
         <div className="title-width m-auto mb-5 bg-info"></div>
         <div className="row g-5">
-          {users.map((user) => (
+          {users?.map((user) => (
             <React.Fragment key={user.id}>
               <DoctorArtical
                 title={user.title}

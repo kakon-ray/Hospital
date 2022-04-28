@@ -72,7 +72,7 @@ export default function Nabar(props) {
   // user Authentication
 
   const [user] = useAuthState(auth);
-  console.log(user);
+  console.log(user?.photoURL);
 
   const logout = () => {
     signOut(auth);
@@ -90,7 +90,7 @@ export default function Nabar(props) {
         <div className="logo">
           <Link to="/" style={{ textDecoration: "none" }}>
             <Nav.Link href="/" className="logo-style">
-              Khulna Hospital
+              Degital Hospital
             </Nav.Link>
           </Link>
         </div>
@@ -203,20 +203,28 @@ export default function Nabar(props) {
                       height: "35px",
                       borderRadius: "50px",
                     }}
-                    alt=""
+                    alt={user?.desplayName}
                   />
                 }
                 id="navbarScrollingDropdown"
               >
                 <div className="text-center">
                   <h6>{user?.displayName}</h6>
-                  <button
+                    <Link
+              to="/dashboard"
+              style={{ textDecoration: "none" }}
+              className="nav-link"
+              onClick={() => setActiveTab("contact")}
+            >
+              Profile
+            </Link>
+                  <p
                     type="submit"
-                    className="btn btn-link py-1 mx-3"
+                    className="nav-link"
                     onClick={logout}
                   >
                     Sign Out
-                  </button>
+                  </p>
                 </div>
               </NavDropdown>
             )}

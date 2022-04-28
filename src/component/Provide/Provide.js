@@ -13,7 +13,7 @@ export default function Provide() {
         <div className="title-width m-auto bg-info"></div>
 
         <div className="row py-3">
-          {users.map((user) => (
+          {users?.map((user) => (
             <Article
               key={user.id}
               title={user.title}
