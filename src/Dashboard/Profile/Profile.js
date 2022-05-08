@@ -8,6 +8,12 @@ const Profile = () => {
   const [user] = useAuthState(auth);
   return (
     <Card>
+      <img
+        src={user.photoURL}
+        className="img-fluid profile-img"
+        style={{ height: "100px", width: "100px", borderRadius: "50px" }}
+        alt=""
+      />
       <Card.Header>
         <img
           src="https://static.dw.com/image/50927628_101.jpg"
@@ -17,12 +23,49 @@ const Profile = () => {
         />
       </Card.Header>
       <Card.Body>
-        <img
-          src={user.photoURL}
-          className="img-fluid profile-img"
-          style={{ height: "100px", width: "100px", borderRadius: "50px" }}
-          alt=""
-        />
+        <div className="row">
+          <div className="col-md-6">
+            <Button variant="info" className="mb-3 w-100">
+              Add Your Personal Information
+            </Button>
+            <Card>
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <h2>Name:</h2>
+                <h4>Visit Fee: </h4>
+                <p></p>
+                <Button variant="info">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </div>
+          <div className="col-md-6">
+            <Button variant="info" className="mb-3 w-100">
+              Create blog and help people
+            </Button>
+            <Card>
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+            <Card>
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </div>
+        </div>
       </Card.Body>
     </Card>
   );
