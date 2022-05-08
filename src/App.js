@@ -21,6 +21,7 @@ import RequireAuth from "./component/RequireAuth/RequireAuth";
 
 import Dashboard from "./Dashboard/Dashboard/Dashboard";
 import Profile from "./Dashboard/Profile/Profile";
+import AddInformation from "./Dashboard/AddInformation/AddInformation";
 
 function App() {
   return (
@@ -46,6 +47,14 @@ function App() {
                   element={
                     <RequireAuth>
                       <Dashboard />
+                    </RequireAuth>
+                  }
+                />
+                <Route
+                  path="/dashboard/addinformation"
+                  element={
+                    <RequireAuth>
+                      <AddInformation />
                     </RequireAuth>
                   }
                 />

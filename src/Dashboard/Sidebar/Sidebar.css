@@ -1,0 +1,29 @@
+.sidenav {
+  height: 100vh;
+  border-radius: 10px;
+  padding-top: 100px !important;
+  z-index: 1;
+  top: 0;
+  left: 7%;
+  overflow-x: hidden;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#sidemenu-icon {
+  font-size: 25px;
+  color: aliceblue;
+}
+
+.side-item:hover #sidemenu-icon {
+  color: coral;
+}
+.side-item:hover .side-menu {
+  color: coral !important;
+}
+
+.active {
+  color: coral !important;
+}
