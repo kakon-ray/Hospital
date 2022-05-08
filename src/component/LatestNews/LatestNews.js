@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
+import { latestNewsContext } from "../../Context/latestNewsContext";
 import Articale from "./Articale";
 
 import "./LatestNews.css";
-
-import { latestNewsContext } from "../userContext/latestNewsContext";
 
 export default function LatestNews() {
   const [news, setNews] = useContext(latestNewsContext);

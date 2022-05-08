@@ -5,12 +5,11 @@ export const latestNewsContext = createContext();
 export const NewsProvider = (props) => {
   const [news, setNews] = useState();
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch("http://localhost:5000/news")
-    .then(res => res.json())
-    .then(data => setNews(data))
-
-  },[])
+      .then((res) => res.json())
+      .then((data) => setNews(data));
+  }, []);
 
   return (
     <latestNewsContext.Provider value={[news, setNews]}>

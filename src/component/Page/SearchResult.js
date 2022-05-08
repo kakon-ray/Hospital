@@ -2,10 +2,10 @@
 
 import React, { useContext, useState } from "react";
 import { Card, Button, Col } from "react-bootstrap";
+import { doctorContext } from "../../Context/doctorContext";
 import Footer from "../Footer/Footer";
 import Nabar from "../Navbar/Nabar";
 import PageBanner from "../PageBanner.js/PageBanner";
-import { doctorContext } from "../userContext/doctorContext";
 
 export default function SearchResult() {
   const [data, useData] = useState();

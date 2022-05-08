@@ -13,7 +13,6 @@ export default function ({ title, department, para, img, alt }) {
               <i className="fab fa-facebook-square"></i>
             </a>
             <a href="#">
-              {" "}
               <i className="fab fa-google-plus-square m-2"></i>
             </a>
             <a href="#">

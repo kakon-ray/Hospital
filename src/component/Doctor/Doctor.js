@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { doctorContext } from "../userContext/doctorContext";
+import { doctorContext } from "../../Context/doctorContext";
+
 import DoctorArtical from "./DoctorArtical";
 
 export default function Doctor() {

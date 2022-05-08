@@ -7,7 +7,7 @@ import img1 from "./img/Screenshot_6.png";
 import img2 from "./img/successful-medical-team_329181-9252.jpg";
 import CarouselCaption from "./CarouselCaption";
 import CarouselImg from "./CarouselImg";
-import { sliderContext } from "../userContext/sliderContext";
+import { sliderContext } from "../../Context/sliderContext";
 
 export default function Slider() {
   const [users, setUsers] = useContext(sliderContext);

@@ -79,6 +79,7 @@ export default function Nabar(props) {
   };
 
   const navigation = useNavigate();
+
   return (
     <Navbar
       sticky="top"
@@ -194,39 +195,30 @@ export default function Nabar(props) {
                 </button>
               </>
             ) : (
-              <NavDropdown
-                title={
+              <Link to="/dashboard/profile" style={{ textDecoration: "none" }}>
+                <div className="d-flex justify-content-center align-items-center px-2 py-1 userprofile">
                   <img
                     src={user?.photoURL ? user?.photoURL : img}
                     style={{
-                      width: "35px",
-                      height: "35px",
+                      width: "30px",
+                      height: "30px",
                       borderRadius: "50px",
+                      border: "1px solid #00c0e1",
                     }}
                     alt={user?.desplayName}
                   />
-                }
-                id="navbarScrollingDropdown"
-              >
-                <div className="text-center">
-                  <h6>{user?.displayName}</h6>
-                    <Link
-              to="/dashboard"
-              style={{ textDecoration: "none" }}
-              className="nav-link"
-              onClick={() => setActiveTab("contact")}
-            >
-              Profile
-            </Link>
-                  <p
-                    type="submit"
-                    className="nav-link"
-                    onClick={logout}
+                  <h6
+                    className="my-auto"
+                    style={{
+                      paddingLeft: "3px",
+                      color: "black",
+                      fontWeight: "400",
+                    }}
                   >
-                    Sign Out
-                  </p>
+                    {user?.displayName.split(" ")[0]}
+                  </h6>
                 </div>
-              </NavDropdown>
+              </Link>
             )}
           </Nav>
 

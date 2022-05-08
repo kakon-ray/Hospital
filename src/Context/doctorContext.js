@@ -5,12 +5,11 @@ export const doctorContext = createContext();
 export const DoctorProvider = (props) => {
   const [users, setUsers] = useState([]);
 
-    useEffect(() => {
+  useEffect(() => {
     fetch("http://localhost:5000/doctor")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
-
 
   return (
     <doctorContext.Provider value={[users, setUsers]}>

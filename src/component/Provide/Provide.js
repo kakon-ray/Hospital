@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { userContext } from "../userContext/userContext";
+import { userContext } from "../../Context/userContext";
 
 import Article from "./Article";
 
@@ -17,7 +17,7 @@ export default function Provide() {
             <Article
               key={user.id}
               title={user.title}
-              icon={user.icon}
+              icon="fas fa-plus"
               description={user.description}
             />
           ))}
