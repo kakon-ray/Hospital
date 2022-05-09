@@ -1,8 +1,13 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../firebase.init";
 import "./Sidebar.css";
+import { signOut } from "firebase/auth";
 const Sidebar = () => {
+  const [user] = useAuthState(auth);
+
   const myStyle = {
     backgroundImage:
       "url('https://i.ibb.co/fdBWF1B/long-height-huge-tree-spring-giant-blue-sky-170887339.jpg')",
@@ -45,6 +50,15 @@ const Sidebar = () => {
             <h4 className="text-light my-auto ps-2 side-menu">Message</h4>
           </div>
         </Link>
+
+        <div
+          className="my-2 py-2 d-flex align-items-center side-item  ps-3"
+          onClick={() => signOut(auth)}
+          style={{ cursor: "pointer" }}
+        >
+          <ion-icon name="log-out-outline" id="sidemenu-icon"></ion-icon>
+          <h4 className="text-light my-auto ps-2 side-menu">Logout</h4>
+        </div>
       </div>
     </div>
   );

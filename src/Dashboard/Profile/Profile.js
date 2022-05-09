@@ -1,19 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import "./Profile.css";
+import img from "../../assets/img/user.png";
 
 const Profile = () => {
+  const [userValue, setUserValue] = useState({});
   const [user] = useAuthState(auth);
+
+  useEffect(() => {
+    // const getUserValue = asy ()
+  }, [user]);
   return (
     <Card>
       <img
-        src={user.photoURL}
+        src={user.photoURL ? user.photoURL : img}
         className="img-fluid profile-img"
         style={{ height: "100px", width: "100px", borderRadius: "50px" }}
         alt=""
       />
+
       <Card.Header>
         <img
           src="https://static.dw.com/image/50927628_101.jpg"

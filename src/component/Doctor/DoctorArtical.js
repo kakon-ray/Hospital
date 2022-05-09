@@ -1,21 +1,34 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable import/no-anonymous-default-export */
 import React from "react";
 
-export default function ({ title, department, para, img, alt }) {
+export default function ({
+  title,
+  department,
+  para,
+  img,
+  alt,
+  fblink,
+  twlink,
+  email,
+}) {
   return (
     <article className="col-lg-3 col-md-6">
       <div className="img-hover">
         <img src={img} alt={alt} className="image"></img>
         <div className="overlay">
           <div className="text ">
-            <a href="#">
+            <a href={fblink} target="_blank">
               <i className="fab fa-facebook-square"></i>
             </a>
-            <a href="#">
+            <a
+              href={`https://mail.google.com/mail/u/0/?tab=${email}`}
+              target="_blank"
+            >
               <i className="fab fa-google-plus-square m-2"></i>
             </a>
-            <a href="#">
+            <a href={twlink} target="_blank">
               <i className="fab fa-twitter-square"></i>
             </a>
           </div>

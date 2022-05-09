@@ -1,7 +1,7 @@
 .sidenav {
   height: 100vh;
   border-radius: 10px;
-  padding-top: 100px !important;
+  margin-top: 3px !important;
   z-index: 1;
   top: 0;
   left: 7%;

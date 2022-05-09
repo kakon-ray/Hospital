@@ -53,7 +53,7 @@ export default function Register() {
 
     await createUserWithEmailAndPassword(email, password)
       .then((res) => {
-        toast.success("Registation Successfull");
+        navigate("/dashboard/profile");
       })
       .catch((error) => {
         toast.error(error.message);
@@ -75,7 +75,7 @@ export default function Register() {
       <ToastContainer position="top-center" reverseOrder={false} />
       <div className="form-responsive mx-auto">
         <Card className="mx-auto rounded-0">
-          <Card.Body className="p-5">
+          <Card.Body className="p-5 pb-3">
             <Form onSubmit={createAccount}>
               <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Control
@@ -115,7 +115,7 @@ export default function Register() {
               </Button>
             </Form>
           </Card.Body>
-          <p className="text-center">
+          <p className="text-center pb-0 mb-0">
             Already have a account?{" "}
             <Link to="/login" style={{ textDecoration: "none" }}>
               <span className="text-info " style={{ cursor: "pointer" }}>
@@ -123,8 +123,8 @@ export default function Register() {
               </span>
             </Link>
           </p>
+          <SocialLogin />
         </Card>
-        <SocialLogin />
       </div>
     </div>
   );

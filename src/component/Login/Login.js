@@ -32,7 +32,8 @@ export default function Login() {
       return;
     }
     signInWithEmailAndPassword(email, password).then((res) => {
-      setTimeout(navigate(from, { replace: true }), 2000);
+      navigate("/dashboard/profile");
+      // setTimeout(navigate(from, { replace: true }), 2000);
     });
 
     if (error) {
@@ -48,8 +49,8 @@ export default function Login() {
     <div className="mt-4">
       <ToastContainer position="top-center" reverseOrder={false} />
       <div className="form-responsive mx-auto">
-        <Card className="mx-auto rounded-0">
-          <Card.Body className="p-5">
+        <Card className="mx-auto rounded-0 pb-4">
+          <Card.Body className="p-5 pb-3">
             <Form onSubmit={signIn}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Control
@@ -73,7 +74,7 @@ export default function Login() {
               </Button>
             </Form>
           </Card.Body>
-          <p className="text-center">
+          <p className="text-center mb-0 pb-0">
             Don't have account?{" "}
             <Link to="/register" style={{ textDecoration: "none" }}>
               <span className="text-info " style={{ cursor: "pointer" }}>
@@ -81,8 +82,8 @@ export default function Login() {
               </span>
             </Link>
           </p>
+          <SocialLogin />
         </Card>
-        <SocialLogin />
       </div>
     </div>
   );

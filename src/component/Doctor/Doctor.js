@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { doctorContext } from "../../Context/doctorContext";
-
 import DoctorArtical from "./DoctorArtical";
+import "./Doctor.css";
 
 export default function Doctor() {
   const [users, setUsers] = useContext(doctorContext);
@@ -19,6 +19,9 @@ export default function Doctor() {
                 department={user.department}
                 para={user.description}
                 img={user.img}
+                fblink={user.facebook}
+                twlink={user.twter}
+                email={user.email}
               />
             </React.Fragment>
           ))}

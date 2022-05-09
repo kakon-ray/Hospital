@@ -31,9 +31,9 @@ const SocialLogin = () => {
   }
 
   return (
-    <div className="mt-3">
+    <div>
       {errorelement}
-      <div className="d-flex align-items-center justify-content-center">
+      <div className="d-flex align-items-center justify-content-center py-0 my-0">
         <div
           style={{ height: "1px", backgroundColor: "lightgray" }}
           className=" w-25"
@@ -66,7 +66,7 @@ const SocialLogin = () => {
         <button
           onClick={() =>
             signInWithFacebook().then((res) => {
-              navigate(from, { replace: true });
+              navigate("/dashboard/profile");
             })
           }
           style={{

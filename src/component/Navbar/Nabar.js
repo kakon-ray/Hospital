@@ -215,7 +215,7 @@ export default function Nabar(props) {
                       fontWeight: "400",
                     }}
                   >
-                    {user?.displayName.split(" ")[0]}
+                    {user.displayName?.split(" ")[0]}
                   </h6>
                 </div>
               </Link>
