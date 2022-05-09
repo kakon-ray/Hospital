@@ -2,8 +2,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable import/no-anonymous-default-export */
 import React from "react";
+import "./Doctor.css";
 
-export default function ({
+export default function DoctorArtical({
   title,
   department,
   para,
@@ -14,9 +15,9 @@ export default function ({
   email,
 }) {
   return (
-    <article className="col-lg-3 col-md-6">
+    <>
       <div className="img-hover">
-        <img src={img} alt={alt} className="image"></img>
+        <img src={img} alt={alt} className="image img-fluid"></img>
         <div className="overlay">
           <div className="text ">
             <a href={fblink} target="_blank">
@@ -41,6 +42,6 @@ export default function ({
         </h5>
         <p>{para}</p>
       </div>
-    </article>
+    </>
   );
 }

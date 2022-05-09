@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Appintment.css";
 
 export default function Appintment({ title }) {
   return (

@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { doctorContext } from "../../Context/doctorContext";
 import DoctorArtical from "./DoctorArtical";
-import "./Doctor.css";
 
 export default function Doctor() {
   const [users, setUsers] = useContext(doctorContext);
@@ -14,15 +13,17 @@ export default function Doctor() {
         <div className="row g-5">
           {users?.map((user) => (
             <React.Fragment key={user.id}>
-              <DoctorArtical
-                title={user.title}
-                department={user.department}
-                para={user.description}
-                img={user.img}
-                fblink={user.facebook}
-                twlink={user.twter}
-                email={user.email}
-              />
+              <article className="col-lg-4 col-md-6">
+                <DoctorArtical
+                  title={user.title}
+                  department={user.department}
+                  para={user.description}
+                  img={user.img}
+                  fblink={user.facebook}
+                  twlink={user.twter}
+                  email={user.email}
+                />
+              </article>
             </React.Fragment>
           ))}
         </div>

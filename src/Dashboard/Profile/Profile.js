@@ -4,14 +4,29 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import "./Profile.css";
 import img from "../../assets/img/user.png";
+import DoctorArtical from "../../component/Doctor/DoctorArtical";
 
 const Profile = () => {
-  const [userValue, setUserValue] = useState({});
+  const [userValue, setUserValue] = useState([]);
   const [user] = useAuthState(auth);
 
   useEffect(() => {
-    // const getUserValue = asy ()
+    const getUserValue = async () => {
+      const url = `http://localhost:5000/doctorprofile?email=${user.email}`;
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => setUserValue(data));
+      try {
+      } catch (error) {
+        console.log(error);
+        throw error;
+      }
+    };
+
+    getUserValue();
   }, [user]);
+
+  console.log(userValue[0]);
   return (
     <Card>
       <img
@@ -36,13 +51,15 @@ const Profile = () => {
               Add Your Personal Information
             </Button>
             <Card>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <h2>Name:</h2>
-                <h4>Visit Fee: </h4>
-                <p></p>
-                <Button variant="dark">Go somewhere</Button>
-              </Card.Body>
+              <DoctorArtical
+                title={userValue[0]?.title}
+                department={userValue[0]?.department}
+                para={userValue[0]?.description}
+                img={userValue[0]?.img}
+                fblink={userValue[0]?.facebook}
+                twlink={userValue[0]?.twter}
+                email={userValue[0]?.email}
+              />
             </Card>
           </div>
           <div className="col-md-6">
