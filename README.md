@@ -1,6 +1,6 @@
-# This Project Name Is Khulna Hospital
+# This Project Name Is Digital Hospital
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Digital Hospital[Do not deploy server heroku](https://github.com/facebook/create-react-app).
 
 > ## This Project build to used React js
 >
@@ -16,5 +16,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 > ## Dashboard create sidebar install dependency : npm install react-pro-sidebar
 
-> ## Dashboart sidebar collection link: https://codesandbox.io/s/r4gb6 
-
+> ## Dashboart sidebar collection link: https://codesandbox.io/s/r4gb6

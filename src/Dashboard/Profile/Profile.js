@@ -30,7 +30,7 @@ const Profile = () => {
   return (
     <Card>
       <img
-        src={user.photoURL ? user.photoURL : img}
+        src={user.photoURL ? user.photoURL : userValue[0]?.img}
         className="img-fluid profile-img"
         style={{ height: "100px", width: "100px", borderRadius: "50px" }}
         alt=""
@@ -51,15 +51,21 @@ const Profile = () => {
               Add Your Personal Information
             </Button>
             <Card>
-              <DoctorArtical
-                title={userValue[0]?.title}
-                department={userValue[0]?.department}
-                para={userValue[0]?.description}
-                img={userValue[0]?.img}
-                fblink={userValue[0]?.facebook}
-                twlink={userValue[0]?.twter}
-                email={userValue[0]?.email}
-              />
+              <Card.Img variant="top" src={userValue[0]?.img} />
+              <Card.Body className="text-center">
+                <h1>{userValue[0]?.title}</h1>
+                <h4>{userValue[0]?.department}</h4>
+                <p>{userValue[0]?.email}</p>
+                <p>{userValue[0]?.visit}</p>
+                <p>{userValue[0]?.time}</p>
+                <Card.Text>{userValue[0]?.des}</Card.Text>
+                <Button variant="dark" className="m-1">
+                  Update Profile
+                </Button>
+                <Button variant="dark" className="m-1">
+                  Delete Profile
+                </Button>
+              </Card.Body>
             </Card>
           </div>
           <div className="col-md-6">
