@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 import "./Sidebar.css";
 import { signOut } from "firebase/auth";
+import background from "../../assets/img/sidebar.jpg";
 const Sidebar = () => {
   const [user] = useAuthState(auth);
 
   const myStyle = {
-    backgroundImage:
-      "url('https://i.ibb.co/fdBWF1B/long-height-huge-tree-spring-giant-blue-sky-170887339.jpg')",
+    backgroundImage: `url(${background})`,
     height: "100vh",
     marginTop: "-70px",
     fontSize: "50px",
