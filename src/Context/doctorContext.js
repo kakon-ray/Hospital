@@ -6,7 +6,7 @@ export const DoctorProvider = (props) => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/doctor")
+    fetch("https://gentle-retreat-65672.herokuapp.com/doctor")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);

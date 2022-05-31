@@ -5,12 +5,11 @@ export const userContext = createContext();
 export const UserProvider = (props) => {
   const [users, setUsers] = useState();
 
-   useEffect(()=>{
-    fetch("http://localhost:5000/provide")
-    .then(res => res.json())
-    .then(data => setUsers(data))
-
-  },[])
+  useEffect(() => {
+    fetch("https://gentle-retreat-65672.herokuapp.com/provide")
+      .then((res) => res.json())
+      .then((data) => setUsers(data));
+  }, []);
   return (
     <userContext.Provider value={[users, setUsers]}>
       {props.children}

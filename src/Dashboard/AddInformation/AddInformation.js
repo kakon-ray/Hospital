@@ -43,13 +43,16 @@ const AddInformation = () => {
 
     async function addFunction() {
       try {
-        const response = await fetch("http://localhost:5000/doctor", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(addValue),
-        });
+        const response = await fetch(
+          "https://gentle-retreat-65672.herokuapp.com/doctor",
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(addValue),
+          }
+        );
 
         Swal.fire({
           position: "top",

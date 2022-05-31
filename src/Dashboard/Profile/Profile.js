@@ -12,7 +12,7 @@ const Profile = () => {
 
   useEffect(() => {
     const getUserValue = async () => {
-      const url = `http://localhost:5000/doctorprofile?email=${user.email}`;
+      const url = `https://gentle-retreat-65672.herokuapp.com/doctorprofile?email=${user.email}`;
       fetch(url)
         .then((res) => res.json())
         .then((data) => setUserValue(data));
